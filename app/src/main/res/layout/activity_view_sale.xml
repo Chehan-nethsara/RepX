@@ -6,7 +6,7 @@
     android:background="@drawable/bg7"
     android:orientation="vertical"
     android:alpha="0.9"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -56,6 +56,7 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal">
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -63,7 +64,6 @@
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:textStyle="bold" />
-
 
         <TextView
             android:hint="Product 01"

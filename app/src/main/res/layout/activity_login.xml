@@ -6,7 +6,7 @@
     android:background="@drawable/bg2"
     android:orientation="vertical"
     android:alpha="0.9"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
