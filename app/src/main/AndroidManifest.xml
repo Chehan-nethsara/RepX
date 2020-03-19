@@ -14,7 +14,7 @@
         <activity android:name=".tool" ></activity>
         <activity android:name=".view_product"></activity>
         <activity android:name=".product"></activity>
-        <activity android:name=".a"></activity>
+
         <activity android:name=".add_product">
 
             <intent-filter>

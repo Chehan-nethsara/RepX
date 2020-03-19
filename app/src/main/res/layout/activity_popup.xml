@@ -75,7 +75,7 @@
             android:id="@+id/tableRow40"
             android:layout_width="wrap_content"
             android:layout_height="86dp"
-            android:layout_marginBottom="@dimen/badge_left_margin"
+
             android:orientation="vertical">
 
             <TextView android:text="                    "></TextView>
