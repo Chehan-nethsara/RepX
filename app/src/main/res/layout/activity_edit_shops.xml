@@ -8,8 +8,6 @@ android:background="@drawable/backgroic"
 android:orientation="vertical"
 tools:context=".EditShops">
 
-
-
 <TextView
     android:id="@+id/list"
     android:layout_width="wrap_content"
@@ -42,6 +40,7 @@ tools:context=".EditShops">
         android:layout_marginLeft="10dp"
         android:layout_gravity="center"
         android:background="@color/colorPrimaryDark"
+        app:srcCompat="@drawable/stores"
         android:layout_width="70dp"
         android:layout_height="70dp"/>
 
@@ -55,7 +54,7 @@ tools:context=".EditShops">
         <TextView
             android:text="Liyanage Stores"
             android:textSize="18dp"
-            android:textColor="#4a4a4a"
+            android:textColor="#FFFF"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -63,17 +62,20 @@ tools:context=".EditShops">
         <TextView
             android:text="Ampara"
             android:textSize="14dp"
+            android:textColor="#FFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:text="0772954373"
             android:textSize="14dp"
+            android:textColor="#FFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:text="liyanage@gmail.com"
             android:textSize="14dp"
+            android:textColor="#FFFF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -109,6 +111,7 @@ tools:context=".EditShops">
         <ImageView
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            app:srcCompat="@drawable/storejaya"
             android:background="@color/colorPrimaryDark"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
@@ -123,7 +126,7 @@ tools:context=".EditShops">
             <TextView
                 android:text="Jayathissa Stores"
                 android:textSize="18dp"
-                android:textColor="#4a4a4a"
+                android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -131,17 +134,20 @@ tools:context=".EditShops">
             <TextView
                 android:text="Kurunagala"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="0775763980"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:text="jaya123@gmail.com"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -177,6 +183,7 @@ tools:context=".EditShops">
         <ImageView
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            app:srcCompat="@drawable/grocery"
             android:background="@color/colorPrimaryDark"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
@@ -191,7 +198,7 @@ tools:context=".EditShops">
             <TextView
                 android:text="Udara Grocery"
                 android:textSize="18dp"
-                android:textColor="#4a4a4a"
+                android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -199,17 +206,20 @@ tools:context=".EditShops">
             <TextView
                 android:text="Malabe"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="0117632198"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:text="udarac@gmail.com"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -245,6 +255,7 @@ tools:context=".EditShops">
         <ImageView
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            app:srcCompat="@drawable/supermarket"
             android:background="@color/colorPrimaryDark"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
@@ -259,7 +270,7 @@ tools:context=".EditShops">
             <TextView
                 android:text="Chef Supermarket"
                 android:textSize="18dp"
-                android:textColor="#4a4a4a"
+                android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -267,17 +278,20 @@ tools:context=".EditShops">
             <TextView
                 android:text="Kandy"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="0812734732"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:text="chefK@gmail.com"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -313,6 +327,7 @@ tools:context=".EditShops">
         <ImageView
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            app:srcCompat="@drawable/superr"
             android:background="@color/colorPrimaryDark"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
@@ -327,7 +342,7 @@ tools:context=".EditShops">
             <TextView
                 android:text="Randils Super"
                 android:textSize="18dp"
-                android:textColor="#4a4a4a"
+                android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -335,17 +350,20 @@ tools:context=".EditShops">
             <TextView
                 android:text="Kadawatha"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="0783745267"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:text="randilssuper@gmail.com"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -381,6 +399,7 @@ tools:context=".EditShops">
         <ImageView
             android:layout_marginLeft="10dp"
             android:layout_gravity="center"
+            app:srcCompat="@drawable/sstore"
             android:background="@color/colorPrimaryDark"
             android:layout_width="70dp"
             android:layout_height="70dp"/>
@@ -395,7 +414,7 @@ tools:context=".EditShops">
             <TextView
                 android:text="Shantha Stores"
                 android:textSize="18dp"
-                android:textColor="#4a4a4a"
+                android:textColor="#FFFF"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -403,17 +422,20 @@ tools:context=".EditShops">
             <TextView
                 android:text="Yakkala"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="0773208228"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:text="rpkshantha@gmail.com"
                 android:textSize="14dp"
+                android:textColor="#FFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
