@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RepX</string>
+    <string name="Phone_number" />
+    <string name="Category" />
+    <string name="Area" />
+    <string name="Dealer_Name" />
+    <string name="Dealer_Code" />
+    <string name="New_Dealer">New_Dealer</string>
 </resources>

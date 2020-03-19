@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:layout_marginTop="70dp"
+        android:background="#D2D4E7"
+        android:text="New Dealer"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        tools:text="New  Dealer" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="60sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Dealer_Code"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Dealer_Code"
+        android:inputType="text"
+        android:text="Dealer_Code" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Dealer_Name"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Dealer_Name"
+        android:inputType="text"
+        android:text="Dealer_Name" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Area"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Area"
+        android:inputType="text"
+        android:text="Area" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Category"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Category"
+        android:inputType="text"
+        android:text="Category" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Phone_number"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Phone_number"
+        android:inputType="text"
+        android:text="Phone_number" />
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_button"
+        android:text="ADD"
+        android:textSize="25sp" />
+
+
+</LinearLayout>
