@@ -83,6 +83,7 @@
      </LinearLayout>
 
      <Button
+         android:id="@+id/Sign_in"
          android:textColor="@android:color/holo_blue_dark"
          android:layout_marginTop="30dp"
          android:layout_gravity="center_horizontal"
@@ -103,6 +104,7 @@
 
         />
     <Button
+        android:id="@+id/Sign_up"
         android:textColor="@android:color/holo_blue_dark"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
