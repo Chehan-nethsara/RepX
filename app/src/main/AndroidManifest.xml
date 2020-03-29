@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".dealer"></activity>
-        <activity android:name=".dealerprofile">
 
+        <activity android:name=".dealerprofile"></activity>
+        <activity android:name=".dealer"></activity>
+        <activity android:name=".add_product"></activity>
+        <activity android:name=".Popup"></activity>
+        <activity android:name=".product"></activity>
+        <activity android:name=".view_product"></activity>
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

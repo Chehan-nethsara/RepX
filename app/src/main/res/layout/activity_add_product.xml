@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrnd"
+    android:orientation="vertical"
+    tools:context=".add_product">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity=""
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:text="@string/NewProduct"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        tools:text="New  Product" />
+
+    <ImageView
+        android:id="@+id/store"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bisuits" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Product_Name"
+        android:gravity="center_horizontal"
+        android:hint="@string/Product_Name"
+        android:inputType="text"
+        android:text="@string/Product_Name" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Product_Name"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Price"
+        android:inputType="text"
+        android:text="@string/Price" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Product_Name"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Description"
+        android:inputType="text"
+        android:text="@string/Description" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Product_Name"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Code"
+        android:inputType="text"
+        android:text="@string/Code" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="17sp"
+        android:layout_marginRight="50dp"
+        android:autofillHints="@string/Product_Name"
+        android:backgroundTint="@android:color/black"
+        android:gravity="center_horizontal"
+        android:hint="@string/Product_Name"
+        android:inputType="text"
+        android:text="@string/Quntity" />
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="47dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/textView113"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="55dp"
+            android:gravity="center"
+            android:text="Dealer"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="56dp"
+            android:layout_weight="0"
+            android:layout_gravity="center"
+            app:srcCompat="@android:drawable/btn_plus" />
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_button"
+        android:text="@string/Create"
+
+        android:textSize="15sp" />
+
+
+</LinearLayout>
