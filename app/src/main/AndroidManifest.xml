@@ -16,8 +16,19 @@
         <activity android:name=".Popup"></activity>
         <activity android:name=".product"></activity>
         <activity android:name=".view_product"></activity>
+        <activity android:name=".AddSales"></activity>
+        <activity android:name=".Customer_Details"></activity>
+        <activity android:name=".EditShops"></activity>
+
+        <activity android:name=".Login"></activity>
+        <activity android:name=".SalesMenu"></activity>
+        <activity android:name=".ShopRegister"></activity>
+        <activity android:name=".Signup"></activity>
+        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".ViewSale"></activity>
 
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
