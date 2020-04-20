@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.repx">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -12,10 +13,10 @@
 
         <activity android:name=".dealerprofile"></activity>
         <activity android:name=".dealer"></activity>
-        <activity android:name=".add_product"></activity>
+
         <activity android:name=".Popup"></activity>
         <activity android:name=".product"></activity>
-        <activity android:name=".view_product"></activity>
+
         <activity android:name=".AddSales"></activity>
         <activity android:name=".Customer_Details"></activity>
         <activity android:name=".EditShops"></activity>
@@ -27,6 +28,9 @@
         <activity android:name=".UserProfile"></activity>
         <activity android:name=".ViewSale"></activity>
 
+
+            <activity android:name=".add_product"></activity>
+        <activity android:name=".view_product"></activity>
         <activity android:name=".MainActivity">
 
             <intent-filter>
