@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "815143060558",
+    "firebase_url": "https://repx-f02c1.firebaseio.com",
+    "project_id": "repx-f02c1",
+    "storage_bucket": "repx-f02c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815143060558:android:2f36c8d3fb528c3beaaf1f",
+        "android_client_info": {
+          "package_name": "com.example.repx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815143060558-62b0nacrgft740ba60fjs56f6ps86i3i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.repx",
+            "certificate_hash": "08c8f2162288c8a5924caa29432011108103e563"
+          }
+        },
+        {
+          "client_id": "815143060558-63ohfbvnqklupdt7jjresr0re7l4ddu3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_vrWJ8_Ra41nxp2WRZve8TOtybRl90gI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815143060558-63ohfbvnqklupdt7jjresr0re7l4ddu3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
