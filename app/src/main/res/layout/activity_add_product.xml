@@ -1,143 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgrnd"
+
     android:orientation="vertical"
     tools:context=".add_product">
 
 
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bgHeader"
         android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/header_add_product"
+        android:theme="@style/ToolbarTheme"
+        android:elevation="5dp"/>
+
+
+    <TextView
+        android:id="@+id/tvSignUp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity=""
-        android:layout_marginTop="50dp"
-        android:gravity="center_horizontal"
-        android:text="@string/NewProduct"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        tools:text="New  Product" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:elevation="10dp"
+        android:transitionName="tvLogin"
+        android:text="NEW PRODUCT"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/store"
+        android:id="@+id/circle1"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_below="@+id/bgHeader"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="-5dp"
+        android:src="@drawable/circletransparent" />
+
+    <ImageView
+        android:id="@+id/circle3"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-80dp"
+        android:layout_marginBottom="-30dp"
+        android:src="@drawable/circle" />
+    <ImageView
+        android:id="@+id/circle4"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="280dp"
+        android:layout_marginBottom="-90dp"
+        android:layout_marginRight="-70dp"
+        android:src="@drawable/circletransparent" />
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="93dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bisuits" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bgHeader"
+        android:layout_margin="20dp">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17sp"
-        android:layout_marginRight="50dp"
-        android:autofillHints="@string/Product_Name"
-        android:gravity="center_horizontal"
-        android:hint="@string/Product_Name"
-        android:inputType="text"
-        android:text="@string/Product_Name" />
+        <RelativeLayout
+            android:id="@+id/rlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17sp"
-        android:layout_marginRight="50dp"
-        android:autofillHints="@string/Product_Name"
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:hint="@string/Price"
-        android:inputType="text"
-        android:text="@string/Price" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="50dp">
+                    <ImageView
+                        android:id="@+id/store"
+                        android:layout_width="match_parent"
+                        android:layout_height="93dp"
+                        android:layout_marginTop="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.497"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/ic_image_black_24dp" />
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/choose_btn"
+                        android:background="@drawable/bg_ui"
+                        android:text="Choose Image"
+                        style="@style/Base.Widget.AppCompat.Button.Coloved"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Product Name"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Price"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="text" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Description"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Code"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="textEmailAddress" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Quntity"
+                        android:textColor="@color/colorPurple"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:inputType="textPostalAddress" />
+
+                    <EditText
+                        android:id="@+id/textView113"
+                        android:layout_width="220dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="55dp"
+                        android:gravity="center"
+                        android:text="Dealer"
+                        android:textSize="25sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="56dp"
+                        android:layout_weight="0"
+                        android:layout_gravity="center"
+                        app:srcCompat="@android:drawable/btn_plus" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv"
+                android:layout_alignLeft="@+id/cv"
+                android:layout_alignRight="@+id/cv"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginRight="70dp"
+                android:elevation="10dp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ui"
+                    android:text="ADD"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17sp"
-        android:layout_marginRight="50dp"
-        android:autofillHints="@string/Product_Name"
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:hint="@string/Description"
-        android:inputType="text"
-        android:text="@string/Description" />
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17sp"
-        android:layout_marginRight="50dp"
-        android:autofillHints="@string/Product_Name"
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:hint="@string/Code"
-        android:inputType="text"
-        android:text="@string/Code" />
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="17sp"
-        android:layout_marginRight="50dp"
-        android:autofillHints="@string/Product_Name"
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:hint="@string/Product_Name"
-        android:inputType="text"
-        android:text="@string/Quntity" />
-
-    <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="47dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/textView113"
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginRight="55dp"
-            android:gravity="center"
-            android:text="Dealer"
-            android:textSize="25sp" />
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="56dp"
-            android:layout_weight="0"
-            android:layout_gravity="center"
-            app:srcCompat="@android:drawable/btn_plus" />
-    </LinearLayout>
 
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
-        android:background="@drawable/bg_button"
-        android:text="@string/Create"
-
-        android:textSize="15sp" />
-
-
-</LinearLayout>

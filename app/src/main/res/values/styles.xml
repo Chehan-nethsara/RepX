@@ -28,4 +28,6 @@
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
+    <style name="Base.Widget.AppCompat.Button.Coloved"></style>
+
 </resources>
