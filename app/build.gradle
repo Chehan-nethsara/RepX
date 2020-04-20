@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
 
 android {
     compileSdkVersion 29
@@ -38,6 +40,19 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
 
+
     //libraries
     implementation 'com.android.support:cardview-v7:29.0.3'
+
+
+    // FIREBASE DEPENDENCIES
+    implementation 'com.google.firebase:firebase-auth:19.3.0'
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.firebase:firebase-firestore:21.4.2'
+
+    //    GSON library for manipulation of JSON
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+
+
 }
