@@ -1,201 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroic"
-    tools:context=".Customer_Details">
+    tools:context=".Customer_Details"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="395dp">
+        <LinearLayout
+            android:background="@drawable/gradientbackground"
+            android:layout_width="match_parent"
+            android:layout_height="345dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_marginTop="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/shop"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shop 01"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:textSize="30dp"/>
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="275dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grade"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="A"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/colorBlue"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Branches"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/colorBlue"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stores"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/colorBlue"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aclonica"
-        android:text="Details"
-        android:textColor="#FBED21"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
-
-    <ImageView
-        android:id="@+id/store"
-        android:layout_width="148dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/stores" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/adamina"
-        android:text="Liyanage Stores"
-        android:textColor="#FFFF"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/store"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <TextView
-        android:id="@+id/cid"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="C2001"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="Mr.Thusith Bandara Liyanage"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cid"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="No.30 Kandy Road"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.223" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="Ampara"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.026" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="32000"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.034" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="liyanage@gmail.com"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.035" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="190dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/adamina"
-        android:text="0772954373"
-        android:textColor="#FFFF"
-        android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.075" />
-
-    <Button
-        android:id="@+id/update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#D5C86E"
-        android:fontFamily="@font/adamina"
-        android:text="Update"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.41" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#D5C86E"
-        android:fontFamily="@font/adamina"
-        android:text="Delete"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.648"
-        app:layout_constraintStart_toEndOf="@+id/update"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.41" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingTop="35dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_email_black_24dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="18dp"
+                android:text="shop1@gmail.com"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_person_black_24dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="18dp"
+                android:text="Owner 01"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_phone_black_24dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="18dp"
+                android:text="+64 112 234 678"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_home_black_24dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="18dp"
+                android:text="city 1, district 1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
