@@ -1,20 +1,25 @@
 package com.example.repx;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.repx.dto.Dealer;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 
 
 public class DealerProfile extends AppCompatActivity {
 
     private Dealer dealer;
-
-    private EditText dealerName;
+    private FirebaseFirestore db;
+    private EditText dealerName,dealerCode,dealerArea,dealerCategory,dealerphoneNumber;
     private Toolbar toolbar;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +35,45 @@ public class DealerProfile extends AppCompatActivity {
         this.dealer = new Gson().fromJson(getIntent().getStringExtra("DEALER"),Dealer.class);
         dealerName = findViewById(R.id.txt_dealerName_profile);
         dealerName.setEnabled(false);
+
+        dealerCode = findViewById(R.id.txt_dealer_code_profile);
+        dealerCode.setEnabled(false);
+
+        dealerArea = findViewById(R.id.txt_dealerArea_profile);
+        dealerArea.setEnabled(false);
+
+        dealerCategory = findViewById(R.id.txt_dealerCategory_profile);
+        dealerCategory.setEnabled(false);
+
+        dealerphoneNumber = findViewById(R.id.txt_dealerPhoneNumber_profile);
+        dealerphoneNumber.setEnabled(false);
+
         setDealerProfile();
+        delete();
     }
 
     private void setDealerProfile(){
         dealerName.setText(dealer.getName());
+        dealerCode.setText(dealer.getId());
+        dealerArea.setText(dealer.getArea());
+        dealerCategory.setText(dealer.getCategory());
+        dealerphoneNumber.setText(dealer.getTelePhoneNumber());
+    }
+
+    private void delete(){
+        db.collection("cities").document("DC")
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                       // Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log.w(TAG, "Error deleting document", e);
+                    }
+                });
     }
 }
