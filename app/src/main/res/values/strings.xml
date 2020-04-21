@@ -50,4 +50,5 @@
     <string name="biscut">biscut</string>
     <string name="logout">Logout</string>
     <string name="add_new_dealer">Add New dealer</string>
+    <string name="add_new_sale">Add New Sale</string>
 </resources>

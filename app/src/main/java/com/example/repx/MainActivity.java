@@ -18,12 +18,14 @@ public class MainActivity extends AppCompatActivity {
     private androidx.appcompat.widget.Toolbar toolbar;
 
     private CardView cardViewDealer;
+    private CardView cardViewSales;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         cardViewDealer = (CardView) findViewById(R.id.cardView_dealer);
+        cardViewSales = (CardView) findViewById(R.id.cardView_sales);
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,DealerActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardViewSales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SalesMenu.class);
                 startActivity(intent);
             }
         });
