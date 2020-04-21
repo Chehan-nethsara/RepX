@@ -49,7 +49,7 @@ public class DealerProfile extends AppCompatActivity {
         dealerphoneNumber.setEnabled(false);
 
         setDealerProfile();
-        delete();
+
     }
 
     private void setDealerProfile(){
@@ -60,20 +60,5 @@ public class DealerProfile extends AppCompatActivity {
         dealerphoneNumber.setText(dealer.getTelePhoneNumber());
     }
 
-    private void delete(){
-        db.collection("cities").document("DC")
-                .delete()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                       // Log.d(TAG, "DocumentSnapshot successfully deleted!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        //Log.w(TAG, "Error deleting document", e);
-                    }
-                });
-    }
+
 }
