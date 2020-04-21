@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.repx">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -21,34 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-        <activity android:name=".ViewSale"></activity>
-        <activity android:name=".dealerprofile"></activity>
-        <activity android:name=".dealer"></activity>
-
-        <activity android:name=".Popup"></activity>
-        <activity android:name=".product"></activity>
-
-        <activity android:name=".view_product"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".AddSales"></activity>
-
-        <activity android:name=".EditShops"></activity>
-        <activity android:name=".Login"></activity>
-        <activity android:name=".SalesMenu"></activity>
-        <activity android:name=".Customer_Details"></activity>
-        <activity android:name=".Signup"></activity>
-        <activity android:name=".UserProfile"></activity>
-
-
-
-            <activity android:name=".add_product"></activity>
-        <activity android:name=".view_product"></activity>
-        <activity android:name=".MainActivity">
-
-        <activity android:name=".AddShop">
-
-
         <activity android:name=".AddNewDealerActivity"
             android:parentActivityName=".DealerActivity"></activity>
         <activity android:name=".DealerActivity"
@@ -65,16 +36,13 @@
         <activity android:name=".EditShops" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SalesMenu" />
-        <activity android:name=".ShopRegister" />
+        <activity android:name=".AddShop"/>
         <activity android:name=".Signup" />
         <activity android:name=".UserProfile" />
         <activity android:name=".ViewSale" />
         <activity android:name=".Login">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
