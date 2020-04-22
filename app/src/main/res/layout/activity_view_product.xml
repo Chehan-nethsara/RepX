@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ProductActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -18,6 +21,7 @@
         android:textAlignment="center" />
 
     <TextView
+        android:id="@+id/txt_myProductSTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -28,319 +32,381 @@
         android:textStyle="bold" />
 
 
-
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMyProducts"
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_border"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="60dp"
-
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bisuits"
-            android:contentDescription="@string/TODO" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/biscut"
-                android:textColor="#4a4a4a"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="@string/AC"
-                android:textSize="14sp" />
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_myProductSTitle"
+        android:orientation="vertical"
+        android:scrollbars="vertical"/>
 
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/EDIT"
-            android:textColor="#FFF" />
 
 
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/layout_border"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
+
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/bisuits"-->
+<!--            android:contentDescription="@string/TODO" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/biscut"-->
+<!--                android:textColor="#4a4a4a"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:text="@string/AC"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_border"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="60dp"
-
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/cream"
-            android:contentDescription="@string/TODO" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Da"
-                android:textColor="#4a4a4a"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-
-                android:text="@string/AC"
-                android:textSize="14sp" />
-        </LinearLayout>
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1" />-->
 
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
+<!--        <Button-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/ic_edit"-->
+<!--            android:backgroundTint="#100F0F"-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/EDIT"
-            android:textColor="#FFF" />
+<!--            android:textColor="#FFF" />-->
 
+<!--        <Button-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:background="@drawable/ic_delete"-->
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_border"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="60dp"
-
-            android:layout_height="59dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/wijaya_product"
-            android:contentDescription="@string/TODO" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Database"
-                android:textColor="#4a4a4a"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-
-                android:text="@string/abc"
-                android:textSize="14sp" />
-        </LinearLayout>
+<!--            android:textColor="#FFF" />-->
 
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/EDIT"
-            android:textColor="#FFF" />
+<!--    </LinearLayout>-->
 
 
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/layout_border"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp">-->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_border"
-        android:orientation="horizontal"
-        android:padding="16dp">
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
 
-        <ImageView
-            android:layout_width="60dp"
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/cream"-->
+<!--            android:contentDescription="@string/TODO" />-->
 
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:contentDescription="@string/TODO" />
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:orientation="vertical">-->
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:orientation="vertical">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/Da"-->
+<!--                android:textColor="#4a4a4a"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Database"
-                android:textColor="#4a4a4a"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-
-                android:text="@string/abc"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/EDIT"
-            android:textColor="#FFF" />
+<!--                android:text="@string/AC"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
 
 
-    </LinearLayout>
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/ic_edit"-->
+<!--            android:backgroundTint="#100F0F"-->
+
+<!--            android:textColor="#FFF" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:background="@drawable/ic_delete"-->
+
+<!--            android:textColor="#FFF" />-->
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/layout_border"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="60dp"
-
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bisuits"
-            android:contentDescription="@string/TODO" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Da"
-                android:textColor="#4a4a4a"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-
-                android:text="@string/AC"
-                android:textSize="14sp" />
-        </LinearLayout>
+<!--    </LinearLayout>-->
 
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/layout_border"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp">-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/bg_button"
-            android:text="@string/EDIT"
-            android:textColor="#FFF" />
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
+
+<!--            android:layout_height="59dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/wijaya_product"-->
+<!--            android:contentDescription="@string/TODO" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/Database"-->
+<!--                android:textColor="#4a4a4a"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+
+<!--                android:text="@string/abc"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
 
 
-    </LinearLayout>
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/ic_edit"-->
+<!--            android:backgroundTint="#100F0F"-->
+
+<!--            android:textColor="#FFF" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:background="@drawable/ic_delete"-->
+
+<!--            android:textColor="#FFF" />-->
 
 
-</LinearLayout>
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/layout_border"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
+
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/bisuits"-->
+<!--            android:contentDescription="@string/TODO" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/Database"-->
+<!--                android:textColor="#4a4a4a"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+
+<!--                android:text="@string/abc"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/ic_edit"-->
+<!--            android:backgroundTint="#100F0F"-->
+
+<!--            android:textColor="#FFF" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:background="@drawable/ic_delete"-->
+
+<!--            android:textColor="#FFF" />-->
+
+
+
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginLeft="16dp"-->
+<!--        android:layout_marginRight="16dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:background="@drawable/layout_border"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="16dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="60dp"-->
+
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/bisuits"-->
+<!--            android:contentDescription="@string/TODO" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/Da"-->
+<!--                android:textColor="#4a4a4a"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+
+<!--                android:text="@string/AC"-->
+<!--                android:textSize="14sp" />-->
+<!--        </LinearLayout>-->
+
+
+<!--        <View-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="28dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:background="@drawable/ic_edit"-->
+<!--            android:backgroundTint="#100F0F"-->
+
+<!--            android:textColor="#FFF" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="37dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="1dp"-->
+<!--            android:background="@drawable/ic_delete"-->
+
+<!--            android:textColor="#FFF" />-->
+
+
+<!--    </LinearLayout>-->
+
+
+</RelativeLayout>
 
