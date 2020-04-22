@@ -19,6 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class AddSales extends AppCompatActivity {
 
@@ -61,12 +62,14 @@ public class AddSales extends AppCompatActivity {
     }
     private void addNewSale(){
 
-        String product,qty,customer,discount,total;
+        String product,qty,customer,discount,total,id;
         product = saleproduct.getText().toString();
         qty  =saleqty.getText().toString();
         customer = salecus.getText().toString();
         discount = saledis.getText().toString();
         total = saletotal.getText().toString();
+        id = UUID.randomUUID().toString();
+
         boolean flag = true;
         if(product.isEmpty()){
             flag = false;

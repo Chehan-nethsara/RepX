@@ -2,10 +2,12 @@ package com.example.repx.recyclerView.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.repx.AddSales;
 import com.example.repx.R;
 import com.example.repx.ViewSale;
 import com.example.repx.dto.Sale;

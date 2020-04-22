@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Sale;
+
 import com.google.gson.Gson;
+
+
 
 public class ViewSale extends AppCompatActivity {
     private Sale sale;
@@ -22,6 +22,7 @@ public class ViewSale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_sale);
 
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Sale Details");
         // Setting toolbar as the ActionBar with setSupportActionBar() call
@@ -30,8 +31,8 @@ public class ViewSale extends AppCompatActivity {
 
         this.sale = new Gson().fromJson(getIntent().getStringExtra("SALE"),Sale.class);
         product = findViewById(R.id.viewSale_product);
-        qty = findViewById(R.id.viewSale_customer);
-        customer = findViewById(R.id.viewSale_qty);
+        qty = findViewById(R.id.viewSale_qty);
+        customer = findViewById(R.id.viewSale_customer);
         date = findViewById(R.id.viewSale_date);
         total = findViewById(R.id.viewSale_total);
 
@@ -40,14 +41,16 @@ public class ViewSale extends AppCompatActivity {
         customer.setEnabled(false);
         date.setEnabled(false);
         total.setEnabled(false);
-
         setSaleDetails();
+
+
     }
+
     private void setSaleDetails(){
         product.setText(sale.getProduct());
         qty.setText(sale.getQty());
         customer.setText(sale.getCustomer());
-        //date.setText(sale.());
+        date.setText(sale.getDiscout());
         total.setText(sale.getTotal());
     }
 }

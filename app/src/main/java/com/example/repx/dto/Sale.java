@@ -1,6 +1,9 @@
 package com.example.repx.dto;
 
+import com.example.repx.recyclerView.adapter.SalesRecycleViewAdapter;
+
 public class Sale {
+    private String id;
     private String product;
     private String qty;
     private String customer;
@@ -15,6 +18,11 @@ public class Sale {
         this.discout = discout;
         this.total = total;
     }
+
+    /*public String getId(){return id;}
+    public void setId(String id) {
+        this.id = id;
+    }*/
 
     public String getProduct() {
         return product;
