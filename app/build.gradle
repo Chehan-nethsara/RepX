@@ -52,9 +52,23 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.3.0'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation 'com.google.firebase:firebase-firestore:21.4.2'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
 
     //    GSON library for manipulation of JSON
     implementation 'com.google.code.gson:gson:2.8.2'
+
+    // croping image
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    //implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+
+    // Image Cropping
+    //implementation 'com.theartofdev.edmodo:android-image-cropper:2.5.1'
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
 
 
