@@ -3,6 +3,7 @@ package com.example.repx.dto;
 public class Dealer {
 
     private String id;
+    private String code;
     private String name;
     private String area;
     private String category;
@@ -12,8 +13,8 @@ public class Dealer {
     public Dealer() {
     }
 
-    public Dealer(String id, String name, String area, String category, String telePhoneNumber) {
-        this.id = id;
+    public Dealer(String code, String name, String area, String category, String telePhoneNumber) {
+        this.code = code;
         this.name = name;
         this.area = area;
         this.category = category;
@@ -21,12 +22,12 @@ public class Dealer {
 
     }
 
-    public String getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -61,5 +62,12 @@ public class Dealer {
         this.telePhoneNumber = telePhoneNumber;
     }
 
+    public void setID(String id){
+        this.id = id;
+    }
+
+    public String getID(){
+        return this.id;
+    }
 
 }

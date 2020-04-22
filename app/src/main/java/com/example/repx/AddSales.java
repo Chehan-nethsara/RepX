@@ -117,6 +117,7 @@ public class AddSales extends AppCompatActivity {
 
         }
     }
+
     private void showSuccessToast(){
         Toast.makeText(this, "Sale Added Successfully", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this,SalesMenu.class);

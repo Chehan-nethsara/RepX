@@ -43,7 +43,7 @@ public class DealerRecycleViewAdapter extends RecyclerView.Adapter<DealerViewHol
     @Override
     public void onBindViewHolder(@NonNull final DealerViewHolder dealerViewHolder, final int i) {
         String name = dealerList.get(i).getName();
-        String code = dealerList.get(i).getId();
+        String code = dealerList.get(i).getCode();
         dealerViewHolder.dealerName.setText("Name : " +  name);
         dealerViewHolder.dealerCode.setText("Code : " + code);
 
