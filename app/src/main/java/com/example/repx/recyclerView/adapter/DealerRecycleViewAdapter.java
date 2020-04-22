@@ -29,7 +29,6 @@ public class DealerRecycleViewAdapter extends RecyclerView.Adapter<DealerViewHol
         this.dealerList = dealerList;
 
     }
-
     @NonNull
     @Override
     public DealerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -37,8 +36,6 @@ public class DealerRecycleViewAdapter extends RecyclerView.Adapter<DealerViewHol
         cardView = (CardView) view;
         return new DealerViewHolder(view, context);
     }
-
-
 
     @Override
     public void onBindViewHolder(@NonNull final DealerViewHolder dealerViewHolder, final int i) {
@@ -55,9 +52,6 @@ public class DealerRecycleViewAdapter extends RecyclerView.Adapter<DealerViewHol
             context.startActivity(intent);
             }
         });
-
-
-
     }
 
     @Override

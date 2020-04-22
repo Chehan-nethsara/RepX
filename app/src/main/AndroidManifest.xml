@@ -26,17 +26,22 @@
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".DealerProfile"
             android:parentActivityName=".DealerActivity"/>
+
+        <activity android:name=".AddShop"
+            android:parentActivityName=".EditShops"></activity>
+        <activity android:name=".EditShops"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Customer_Details"
+            android:parentActivityName=".EditShops"></activity>
+
         <activity android:name=".dto.Dealer" />
         <activity android:name=".add_product" />
         <activity android:name=".Popup" />
         <activity android:name=".product" />
         <activity android:name=".view_product" />
         <activity android:name=".AddSales" />
-        <activity android:name=".Customer_Details" />
-        <activity android:name=".EditShops" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SalesMenu" />
-        <activity android:name=".AddShop"/>
         <activity android:name=".Signup" />
         <activity android:name=".UserProfile" />
         <activity android:name=".ViewSale" />

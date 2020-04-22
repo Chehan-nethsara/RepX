@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,38 +7,47 @@
     android:background="@color/colorWhite"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="395dp">
+        android:layout_height="290dp">
+
         <LinearLayout
-            android:background="@drawable/gradientbackground"
             android:layout_width="match_parent"
-            android:layout_height="345dp"
+            android:layout_height="245dp"
+            android:background="@color/startblue"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_marginTop="45dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/shop"/>
+                android:layout_marginTop="20dp"
+                android:src="@drawable/shop" />
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+                android:id="@+id/txt_customer_profile_shopname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shop 01"
-                android:textColor="#ffff"
-                android:textStyle="bold"
-                android:textSize="30dp"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="23dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
-            android:layout_height="120dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="275dp">
+            android:layout_marginTop="190dp">
 
             <LinearLayout
+                android:background="@color/blueHome"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -54,6 +62,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textStyle="italic"
                         android:text="Grade"
                         android:textSize="20sp"/>
                     <TextView
@@ -74,6 +84,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textStyle="italic"
                         android:text="Branches"
                         android:textSize="20sp"/>
                     <TextView
@@ -94,6 +106,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textStyle="italic"
                         android:text="Stores"
                         android:textSize="20sp"/>
                     <TextView
@@ -108,86 +122,104 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
+
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="250dp"
         android:layout_gravity="center"
+        android:orientation="vertical"
         android:paddingTop="35dp">
+
         <LinearLayout
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_email_black_24dp"/>
+                android:src="@drawable/ic_email_black_24dp" />
+
             <TextView
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
+                android:id="@+id/txt_customer_profile_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
+                android:textColor="#000000"
                 android:textSize="18dp"
-                android:text="shop1@gmail.com"/>
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_person_black_24dp"/>
+                android:src="@drawable/ic_person_black_24dp" />
+
             <TextView
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
+                android:id="@+id/txt_customer_profile_ownername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
+                android:textColor="#000000"
                 android:textSize="18dp"
-                android:text="Owner 01"/>
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_phone_black_24dp"/>
+                android:src="@drawable/ic_phone_black_24dp" />
+
             <TextView
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
+                android:id="@+id/txt_customer_profile_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
+                android:textColor="#000000"
                 android:textSize="18dp"
-                android:text="+64 112 234 678"/>
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingLeft="25dp">
+
             <ImageView
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/ic_home_black_24dp"/>
+                android:src="@drawable/ic_home_black_24dp" />
+
             <TextView
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
+                android:id="@+id/txt_customer_profile_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
+                android:textColor="#000000"
                 android:textSize="18dp"
-                android:text="city 1, district 1"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

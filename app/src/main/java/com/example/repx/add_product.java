@@ -1,7 +1,7 @@
 package com.example.repx;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -85,4 +85,5 @@ public class add_product extends AppCompatActivity {
             mImageView.setImageURI(data.getData());
         }
     }
+
 }

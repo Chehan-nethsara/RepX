@@ -13,7 +13,6 @@ import com.google.gson.Gson;
 public class DealerProfile extends AppCompatActivity {
 
     private Dealer dealer;
-
     private EditText dealerName;
     private Toolbar toolbar;
 
