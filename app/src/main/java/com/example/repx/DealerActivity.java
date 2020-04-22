@@ -64,8 +64,8 @@ public class DealerActivity extends AppCompatActivity {
                                 System.out.println(document.getData());
                                 Map<String,Object> dealerHashMap = document.getData();
                                 Dealer dealer = new Dealer(dealerHashMap.get("code").toString(),dealerHashMap.get("name").toString(),dealerHashMap.get("area").toString(),dealerHashMap.get("category").toString(),dealerHashMap.get("phoneNumber").toString());
+                                dealer.setID(document.getId());
                                 dealerList.add(dealer);
-
                             }
                             loadRecyclerView();
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -98,5 +98,6 @@ public class DealerActivity extends AppCompatActivity {
         DealerRecycleViewAdapter myAdapter = new DealerRecycleViewAdapter(dealerList, this);
         recyclerView.setAdapter(myAdapter);
     }
+
 
 }

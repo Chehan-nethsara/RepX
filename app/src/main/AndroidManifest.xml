@@ -35,10 +35,11 @@
             android:parentActivityName=".EditShops"></activity>
 
         <activity android:name=".dto.Dealer" />
-        <activity android:name=".add_product" />
+        <activity android:name=".AddProductActivity" />
         <activity android:name=".Popup" />
         <activity android:name=".product" />
-        <activity android:name=".view_product" />
+        <activity android:name=".ProductActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".AddSales" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SalesMenu" />
@@ -51,6 +52,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"></activity>
     </application>
 
 </manifest>

@@ -26,7 +26,7 @@ public class add_product extends AppCompatActivity {
         setContentView(R.layout.activity_add_product);
         //views
         mImageView = findViewById(R.id.store);
-        mChooseBtn = findViewById(R.id.choose_btn);
+        //mChooseBtn = findViewById(R.id.choose_btn);
         //handle button click
         mChooseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
