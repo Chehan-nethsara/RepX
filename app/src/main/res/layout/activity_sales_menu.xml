@@ -1,497 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg12"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:alpha="0.9">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="-50dp">
+        android:id="@+id/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="138dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="463dp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/logo4"/>
-
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="-43dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/logo4" />
+        <TextView
+            android:id="@+id/salesMenuText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="94dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="69dp"
+            android:background="@drawable/bgcard"
+            android:gravity="center_horizontal"
+            android:text="Sales Menu"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
     </RelativeLayout>
 
-    <TextView
-        android:background="@drawable/bgcard"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="-50dp"
-        android:textSize="25sp"
-        android:textColor="@android:color/black"
-        android:gravity="center_horizontal"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sales Menu"
-
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/Choose_product"
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Products"
-            android:letterSpacing="0.3" />
-
-        <Button
-            android:id="@+id/choose_cus"
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Customer"
-            android:letterSpacing="0.3" />
-
-        <Button
-            android:id="@+id/choose_date"
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Date"
-            android:letterSpacing="0.3"/>
-
-        <Button
-            android:id="@+id/add_sales_button"
-            android:textColor="@android:color/holo_blue_dark"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Add sales"
-            android:letterSpacing="0.3" />
-    </LinearLayout>
-        <EditText
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button8"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical" />
 
 
-    <EditText
-
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button12"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
-    <EditText
-
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button21"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button22"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
-    <EditText
-
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button31"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button32"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
-        <EditText
-
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView41"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView43"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button41"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button42"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
-        <EditText
-
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:orientation="horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pr1" />
-
-        <TextView
-            android:id="@+id/textView51"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Iphone"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView52"
-            android:layout_width="60dp"
-            android:paddingTop="10dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Shop1"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView53"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:text="12"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button51"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Edit" />
-
-        <Button
-            android:id="@+id/button52"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete" />
-    </LinearLayout>
-    <EditText
-
-        android:backgroundTint="@android:color/black"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
 
 
