@@ -1,6 +1,8 @@
 package com.example.repx.recyclerView.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -16,10 +18,12 @@ import com.example.repx.DealerProfile;
 import com.example.repx.R;
 import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Product;
+import com.example.repx.product;
 import com.example.repx.recyclerView.view_holder.DealerViewHolder;
 import com.example.repx.recyclerView.view_holder.ProductViewHolder;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
@@ -32,11 +36,13 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
     List<Product> productList;
     CardView cardView;
     Context context;
+    FirebaseFirestore db;
+    ProductListner productListner;
 
     public ProductRecycleViewAdapter(List<Product> products, Context context) {
         this.context = context;
         this.productList = products;
-
+        this.db = FirebaseFirestore.getInstance();
     }
 
     @NonNull
@@ -72,6 +78,53 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         });
 
         productViewHolder.productName.setText(productName);
+        productViewHolder.editProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, product.class);
+                context.startActivity(intent);
+            }
+        });
+
+        productViewHolder.deleteProductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertMessage(i);
+            }
+        });
+
+    }
+
+    private void alertMessage(final int i) {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Alert");
+        builder.setMessage("Do You want to delete this product?")
+                .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        db.collection("product").document(productList.get(i).getProductDocumnetID()).delete();
+                        productListner.removeProduct(i);
+                    }
+                })
+                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        builder.create().show();
+    }
+
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+
+        try {
+            productListner = (ProductListner) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement ProductListner ");
+        }
 
     }
 
@@ -81,5 +134,10 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         else
             return productList.size();
     }
+
+    public interface ProductListner {
+        void removeProduct(int i);
+    }
+
 }
 
