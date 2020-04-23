@@ -17,7 +17,6 @@ public class DealerViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
        this.dealerName = itemView.findViewById(R.id.txt_dealer_name_card);
        this.dealerCode = itemView.findViewById(R.id.txt_dealer_code_card);
-
     }
 
 }

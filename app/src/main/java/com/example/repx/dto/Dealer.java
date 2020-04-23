@@ -13,8 +13,8 @@ public class Dealer {
     public Dealer() {
     }
 
-    public Dealer(String id, String name, String area, String category, String telePhoneNumber) {
-        this.id = id;
+    public Dealer(String code, String name, String area, String category, String telePhoneNumber) {
+        this.code = code;
         this.name = name;
         this.area = area;
         this.category = category;
@@ -22,6 +22,13 @@ public class Dealer {
 
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getName() {
 
@@ -56,14 +63,6 @@ public class Dealer {
     public void setTelePhoneNumber(String telePhoneNumber) {
 
         this.telePhoneNumber = telePhoneNumber;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public void setID(String id){
