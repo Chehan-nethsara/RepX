@@ -27,12 +27,9 @@ import java.util.Map;
 public class DealerActivity extends AppCompatActivity {
 
     private static final String TAG = "DealerActivity";
-
     private Toolbar toolbar;
     private  FirebaseFirestore db;
-
     private  RecyclerView recyclerView;
-
     private  List<Dealer> dealerList;
 
     @Override
@@ -45,23 +42,17 @@ public class DealerActivity extends AppCompatActivity {
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
-
         recyclerView = findViewById(R.id.recyclerView);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Access a Cloud Firestore instance from your Activity
         db = FirebaseFirestore.getInstance();
-
         dealerList = new ArrayList<>();
-
         getdealersData();
 
     }
-
-
     public  void getdealersData(){
-
         db.collection("dealer")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -83,7 +74,6 @@ public class DealerActivity extends AppCompatActivity {
                 });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -100,7 +90,6 @@ public class DealerActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-
         }
     }
 

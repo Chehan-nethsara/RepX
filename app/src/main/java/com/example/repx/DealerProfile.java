@@ -45,7 +45,7 @@ public class DealerProfile extends AppCompatActivity {
 
         db = FirebaseFirestore.getInstance();
 
-       // listener = (DeleteClickOnListener) this;
+        // listener = (DeleteClickOnListener) this;
 
         this.dealer = new Gson().fromJson(getIntent().getStringExtra("DEALER"),Dealer.class);
         dealerName = findViewById(R.id.txt_dealerName_profile);
@@ -96,7 +96,7 @@ public class DealerProfile extends AppCompatActivity {
 
     private void updateProfile() {
         if(!dealer.getName().equals(dealerName.getText().toString()) || !dealer.getCategory().equals(dealerCategory.getText().toString())
-        || !dealer.getArea().equals(dealerArea.getText().toString()) || !dealer.getTelePhoneNumber().equals(dealerphoneNumber.getText().toString())){
+                || !dealer.getArea().equals(dealerArea.getText().toString()) || !dealer.getTelePhoneNumber().equals(dealerphoneNumber.getText().toString())){
             dealer.setArea(dealerArea.getText().toString());
             dealer.setName(dealerName.getText().toString());
             dealer.setCategory(dealerCategory.getText().toString());
@@ -112,7 +112,7 @@ public class DealerProfile extends AppCompatActivity {
             db.collection("dealer").document(dealer.getID()).update(dealerMap);
 
 
-         }
+        }
         successMessage();
         setDisableFields();
     }
