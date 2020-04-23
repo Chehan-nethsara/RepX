@@ -69,6 +69,7 @@ public class SalesMenu extends AppCompatActivity {
                                 System.out.println(document.getData());
                                 Map<String,Object> saleHashMap = document.getData();
                                 Sale sale = new Sale(saleHashMap.get("product").toString(),saleHashMap.get("qty").toString(),saleHashMap.get("customer").toString(),saleHashMap.get("discount").toString(),saleHashMap.get("total").toString());
+                                sale.setId(document.getId());
                                 saleList.add(sale);
 
                             }
