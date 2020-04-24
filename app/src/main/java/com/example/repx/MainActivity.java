@@ -3,22 +3,20 @@ package com.example.repx;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private androidx.appcompat.widget.Toolbar toolbar;
-
     private CardView cardViewDealer;
     private CardView cardViewProduct;
+    private CardView cardViewCustomer;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         cardViewDealer = (CardView) findViewById(R.id.cardView_dealer);
         cardViewProduct=(CardView) findViewById(R.id.cardView_product);
+        cardViewCustomer = (CardView) findViewById(R.id.cardView_customer);
+
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
@@ -42,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, EditShops.class);
                 startActivity(intent);
             }
         });

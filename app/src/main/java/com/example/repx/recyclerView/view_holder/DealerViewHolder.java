@@ -12,7 +12,6 @@ public class DealerViewHolder extends RecyclerView.ViewHolder {
     public TextView dealerName;
     public TextView dealerCode;
 
-
     public DealerViewHolder(@NonNull final View itemView, final Context context) {
         super(itemView);
        this.dealerName = itemView.findViewById(R.id.txt_dealer_name_card);

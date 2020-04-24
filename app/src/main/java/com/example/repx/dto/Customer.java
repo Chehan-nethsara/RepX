@@ -1,13 +1,20 @@
 package com.example.repx.dto;
 
 public class Customer {
+
+    String customerDocumentID;
     String shopNameCustomer;
     String ownerNameCustomer;
     String phoneCustomer;
     String emailCustomer;
     String addressCustomer;
 
-    public Customer(String shopNameCustomer, String ownerNameCustomer, String phoneCustomer, String emailCustomer, String addressCustomer) {
+    public Customer() {
+
+    }
+
+    public Customer(String CustomerDocumentID, String shopNameCustomer, String ownerNameCustomer, String phoneCustomer, String emailCustomer, String addressCustomer) {
+        this.customerDocumentID = CustomerDocumentID;
         this.shopNameCustomer = shopNameCustomer;
         this.ownerNameCustomer = ownerNameCustomer;
         this.phoneCustomer = phoneCustomer;
@@ -16,6 +23,7 @@ public class Customer {
     }
 
     public String getShopNameCustomer() {
+
         return shopNameCustomer;
     }
 
@@ -24,6 +32,7 @@ public class Customer {
     }
 
     public String getOwnerNameCustomer() {
+
         return ownerNameCustomer;
     }
 
@@ -32,6 +41,7 @@ public class Customer {
     }
 
     public String getPhoneCustomer() {
+
         return phoneCustomer;
     }
 
@@ -41,10 +51,12 @@ public class Customer {
     }
 
     public String getEmailCustomer() {
+
         return emailCustomer;
     }
 
     public void setEmailCustomer(String emailCustomer) {
+
         this.emailCustomer = emailCustomer;
     }
 
@@ -55,5 +67,13 @@ public class Customer {
 
     public void setAddressCustomer(String addressCustomer) {
         this.addressCustomer = addressCustomer;
+    }
+
+    public String getCustomerDocumentID() {
+        return customerDocumentID;
+    }
+
+    public void setCustomerDocumentID(String customerDocumentID) {
+        this.customerDocumentID = customerDocumentID;
     }
 }

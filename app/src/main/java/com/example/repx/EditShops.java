@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
 import com.example.repx.dto.Customer;
 import com.example.repx.recyclerView.adapter.CustomerRecycleViewAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,13 +25,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class EditShops extends AppCompatActivity {
+public class EditShops extends AppCompatActivity implements CustomerRecycleViewAdapter.CustomerListner {
 
+    //CustomerRecycleViewAdapter.CustomerListner customerListner;
     private static final String TAG = "EditShops";
     private Toolbar toolbar;
     private FirebaseFirestore db;
-    private RecyclerView recyclerView;
-    public List<Customer> customerList;
+    private RecyclerView recyclerViewCustomer;
+    private List<Customer> customerList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +44,7 @@ public class EditShops extends AppCompatActivity {
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
-        recyclerView = findViewById(R.id.recyclerView_Customer);
+        recyclerViewCustomer = findViewById(R.id.recyclerView_Customer);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -47,6 +52,7 @@ public class EditShops extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         customerList = new ArrayList<>();
         getCustomersList();
+
     }
 
     private void getCustomersList() {
@@ -64,11 +70,14 @@ public class EditShops extends AppCompatActivity {
 
                                 Map<String,Object> customerHashMap = document.getData();
 
-                                Customer customer = new Customer(customerHashMap.get("ShopName").toString(),
-                                                                customerHashMap.get("OwnerName").toString(),
-                                                                customerHashMap.get("PhoneNumber").toString(),
-                                                                customerHashMap.get("EmailAddress").toString(),
-                                                                customerHashMap.get("PostalAddress").toString());
+                                Customer customer = new Customer();
+                                        customer.setShopNameCustomer(customerHashMap.get("ShopName").toString());
+                                        customer.setOwnerNameCustomer(customerHashMap.get("OwnerName").toString());
+                                        customer.setPhoneCustomer(customerHashMap.get("PhoneNumber").toString());
+                                        customer.setEmailCustomer(customerHashMap.get("EmailAddress").toString());
+                                        customer.setAddressCustomer(customerHashMap.get("PostalAddress").toString());
+                                    customer.setCustomerDocumentID(document.getId());
+                                    //customerListner.removeCustomer(i);
                                customerList.add(customer);
                             }
                             loadRecyclerViewCustomer();
@@ -98,10 +107,20 @@ public class EditShops extends AppCompatActivity {
     }
 
    void loadRecyclerViewCustomer() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+       recyclerViewCustomer.setLayoutManager(new LinearLayoutManager(this));
         CustomerRecycleViewAdapter customerAdapter = new CustomerRecycleViewAdapter(customerList,this);
-       //final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(c);
-        recyclerView.setAdapter(customerAdapter);
+       recyclerViewCustomer.setAdapter(customerAdapter);
    }
 
+    public void removeCustomer(int i) {
+        this.customerList.remove(i);
+        loadRecyclerViewCustomer();
+    }
+
+    /*public void showSuccessDeleteToast(){
+        Toast.makeText(this, "Customer Added Successfully", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, EditShops.class);
+        startActivity(intent);
+        finish();
+    }*/
 }

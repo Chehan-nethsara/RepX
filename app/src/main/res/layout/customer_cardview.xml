@@ -54,6 +54,7 @@
             android:layout_height="0dp"/>
 
         <Button
+            android:id="@+id/btn_editCustomer"
             android:background="@drawable/ic_edit2_black_24dp"
             android:layout_marginRight="23dp"
             android:layout_gravity="center"
@@ -61,7 +62,8 @@
             android:layout_height="30dp"></Button>
 
         <Button
-            android:background="@drawable/ic_delete_black_24dp"
+            android:id="@+id/btn_deleteCustomer"
+            android:background="@drawable/ic_delete"
             android:layout_marginRight="10dp"
             android:layout_gravity="center"
             android:layout_width="30dp"
