@@ -36,6 +36,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="23sp"
                     android:textColor="#FFFFFF"
+                    android:textStyle="bold"
                     android:text="Dashboard"/>
 
                 <TextView
@@ -45,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
                     android:textColor="#000000"
-                    android:text="14 Items"/>
+                    android:text="08 Items"/>
 
                 <ImageView
                     android:layout_alignParentRight="true"
