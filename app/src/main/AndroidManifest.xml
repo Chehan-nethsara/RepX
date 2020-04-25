@@ -35,7 +35,8 @@
             android:parentActivityName=".EditShops"></activity>
 
         <activity android:name=".dto.Dealer" />
-        <activity android:name=".AddProductActivity" />
+        <activity android:name=".AddProductActivity"
+            android:parentActivityName=".ProductActivity"></activity>
         <activity android:name=".Popup" />
         <activity android:name=".product" />
         <activity android:name=".ProductActivity"

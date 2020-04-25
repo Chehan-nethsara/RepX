@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,22 +12,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
-
-import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Product;
-import com.example.repx.recyclerView.adapter.DealerRecycleViewAdapter;
 import com.example.repx.recyclerView.adapter.ProductRecycleViewAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ProductActivity extends AppCompatActivity {
+public class ProductActivity extends AppCompatActivity implements ProductRecycleViewAdapter.ProductListner {
 
 
     RecyclerView recyclerView;
@@ -36,7 +31,7 @@ public class ProductActivity extends AppCompatActivity {
     private List<Product> productList;
     private FirebaseFirestore db;
     private static final String TAG = "view_product";
-   // private Button editProductButton;
+    private Button editProductButton;
     //private Button deleteProductButton;
     Toolbar toolbar;
 
@@ -59,19 +54,22 @@ public class ProductActivity extends AppCompatActivity {
         productList = new ArrayList<>();
         loadProductData();
 
-       /* editProductButton = (Button) findViewById(R.id.btn_editProduct);
-        editProductButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openProduct();
-            }
-        });*/
+       editProductButton = (Button) findViewById(R.id.btn_editProduct);
+
+        //editProductButton.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  openProduct();
+            //}
+        //});
+        //editProductButton.setOnClickListener(R.layout.product);
 
     }
-    //public void openProduct() {
-      //  Intent intent = new Intent(this, product.class);
-        //startActivity(intent);
-    //}
+    public void openProduct() {
+       Intent intent = new Intent(this, product.class);
+        startActivity(intent);
+        finish();
+    }
 
 
     @Override
@@ -112,7 +110,7 @@ public class ProductActivity extends AppCompatActivity {
                                 product.setProductCode(productMap.get("code").toString());
                                 product.setProductDescription(productMap.get("description").toString());
                                 product.setProductPrice(productMap.get("price").toString());
-
+                                product.setProductDocumnetID(document.getId());
                                 productList.add(product);
 
                             }
@@ -128,5 +126,11 @@ public class ProductActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ProductRecycleViewAdapter myAdapter = new ProductRecycleViewAdapter(productList, this);
         recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void removeProduct(int i) {
+        this.productList.remove(i);
+        loadRecyclerView();
     }
 }
