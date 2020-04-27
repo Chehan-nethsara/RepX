@@ -106,7 +106,7 @@ public class ProductActivity extends AppCompatActivity implements ProductRecycle
 
                                 Product product = new Product();
                                 product.setProductName(productMap.get("name").toString());
-                                product.setPrductQuantity(Double.valueOf(productMap.get("quntity").toString()));
+                                product.setPrductQuantity(productMap.get("quntity").toString());
                                 product.setProductCode(productMap.get("code").toString());
                                 product.setProductDescription(productMap.get("description").toString());
                                 product.setProductPrice(productMap.get("price").toString());

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -23,13 +24,16 @@ import com.example.repx.recyclerView.view_holder.DealerViewHolder;
 import com.example.repx.recyclerView.view_holder.ProductViewHolder;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewHolder> {
 
@@ -38,6 +42,8 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
     Context context;
     FirebaseFirestore db;
     ProductListner productListner;
+    private Product products;
+    static ConstraintLayout container;
 
     public ProductRecycleViewAdapter(List<Product> products, Context context) {
         this.context = context;
@@ -82,6 +88,11 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, product.class);
+
+
+                System.out.println("============================ " + productList.get(i).getProductPrice());
+
+                intent.putExtra("PRODUCT",new Gson().toJson(productList.get(i)));
                 context.startActivity(intent);
             }
         });
@@ -93,7 +104,18 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
             }
         });
 
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, product.class);
+                intent.putExtra("PRODUCT",new Gson().toJson(productList.get(i)));
+                context.startActivity(intent);
+            }
+        });
+
     }
+
+
 
     private void alertMessage(final int i) {
 
@@ -138,6 +160,12 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
     public interface ProductListner {
         void removeProduct(int i);
     }
+
+
+
+
+
+
 
 }
 

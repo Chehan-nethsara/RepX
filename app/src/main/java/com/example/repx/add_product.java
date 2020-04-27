@@ -25,7 +25,7 @@ public class add_product extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
         //views
-        mImageView = findViewById(R.id.store);
+        mImageView = findViewById(R.id.img_selectedProductImage);
         //mChooseBtn = findViewById(R.id.choose_btn);
         //handle button click
         mChooseBtn.setOnClickListener(new View.OnClickListener() {
