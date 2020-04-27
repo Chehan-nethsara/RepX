@@ -159,7 +159,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Date :"
+                android:text="Discount :"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

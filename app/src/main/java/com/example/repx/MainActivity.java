@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private CardView cardViewDealer;
     private CardView cardViewProduct;
+    private CardView cardViewSales;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         cardViewDealer = (CardView) findViewById(R.id.cardView_dealer);
         cardViewProduct=(CardView) findViewById(R.id.cardView_product);
+        cardViewSales=(CardView) findViewById(R.id.cardView_sales);
+
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
@@ -42,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardViewSales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SalesMenu.class);
                 startActivity(intent);
             }
         });
