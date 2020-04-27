@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -8,13 +10,10 @@
         layout="@layout/toolbar" />
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:background="@drawable/bbbb"
+        android:background="@drawable/homeback"
         tools:context=".MainActivity">
 
 
@@ -37,7 +36,8 @@
                     android:layout_height="wrap_content"
                     android:textSize="23sp"
                     android:textColor="#FFFFFF"
-                    android:text="My dashboard"/>
+                    android:textStyle="bold"
+                    android:text="Dashboard"/>
 
                 <TextView
                     android:layout_below="@id/txtdashboard"
@@ -45,12 +45,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:textColor="#010C09"
-                    android:text="14 Items"/>
+                    android:textColor="#000000"
+                    android:text="08 Items"/>
 
                 <ImageView
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/prof_picture"
+                    android:src="@drawable/rep_profile"
                     android:layout_width="60dp"
                     android:layout_height="60dp"/>
 
@@ -65,36 +65,37 @@
                 android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
+                    android:id="@+id/cardView_sales"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
+                    android:layout_columnWeight="1"
                     android:layout_margin="12dp"
-                    >
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
+                        android:layout_width="119dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/bookmark"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/sales_ic" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -102,36 +103,36 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView_product"
-                    android:layout_width="wrap_content"
+                    android:layout_width="129dp"
                     android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
+                    android:layout_columnWeight="1"
                     android:layout_margin="12dp"
-                    >
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
+                        android:layout_width="152dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/bookmark"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/procuct_icn" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="Product"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -157,16 +158,17 @@
 
                         <ImageView
                             android:layout_gravity="center"
-                            android:src="@drawable/chat"
+                            android:src="@drawable/customericon"
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
 
                         <TextView
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
                             android:text="Customers"
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
@@ -194,16 +196,17 @@
 
                         <ImageView
                             android:layout_gravity="center"
-                            android:src="@drawable/contact"
+                            android:src="@drawable/dealer_icon"
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
 
                         <TextView
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
                             android:text="Dealers"
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
@@ -212,6 +215,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
@@ -222,26 +226,28 @@
                     >
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_gravity="center"
+
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/date"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/user_icon" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
                             android:text="User"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -266,16 +272,17 @@
 
                         <ImageView
                             android:layout_gravity="center"
-                            android:src="@drawable/date"
+                            android:src="@drawable/report"
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
 
                         <TextView
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
                             android:text="Report"
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
@@ -302,16 +309,17 @@
 
                         <ImageView
                             android:layout_gravity="center"
-                            android:src="@drawable/chat"
+                            android:src="@drawable/settings_new"
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
 
                         <TextView
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
                             android:text="Settings"
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
@@ -337,97 +345,23 @@
 
                         <ImageView
                             android:layout_gravity="center"
-                            android:src="@drawable/chat"
+                            android:src="@drawable/chat_icon"
                             android:layout_width="80dp"
                             android:layout_height="80dp"/>
 
                         <TextView
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
+                            android:textColor="#1F225B"
+                            android:textSize="20sp"
                             android:text="Chat"
+                            android:textStyle="bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/bookmark"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"/>
-
-                        <TextView
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text="Sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp"
-                    >
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:src="@drawable/bookmark"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"/>
-
-                        <TextView
-                            android:layout_gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:textColor="#6f6f6f"
-                            android:textSize="18sp"
-                            android:text="Sales"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-
 
             </GridLayout>
 

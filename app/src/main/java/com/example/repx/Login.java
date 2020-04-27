@@ -99,7 +99,7 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            registration(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -138,11 +138,28 @@ public class Login extends AppCompatActivity {
         updateUI(currentUser);
     }
 
+    private void registration(FirebaseUser user){
+        if(user != null){
+
+            Intent intent = new Intent(this,Signup.class);
+            intent.putExtra("EMAIL",user.getEmail());
+            intent.putExtra("USER_ID",user.getUid());
+            intent.putExtra("NAME",user.getDisplayName());
+            startActivity(intent);
+            finish();
+
+        }else{
+            Toast.makeText(this,"Registration Failed!,Try again",Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void updateUI(FirebaseUser user){
         if(user != null){
+
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
             finish();
+
         }else{
             Toast.makeText(this,"Login Failed!,Try again",Toast.LENGTH_LONG).show();
         }

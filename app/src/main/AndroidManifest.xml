@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
+
+        <activity android:name=".UserDetailsActivity"></activity>
         <activity
             android:name=".AddNewDealerActivity"
             android:parentActivityName=".DealerActivity" />
@@ -39,9 +42,9 @@
         <activity
             android:name=".Customer_Details"
             android:parentActivityName=".EditShops" />
+
         <activity android:name=".EditCustomerUI"
             android:parentActivityName=".EditShops"></activity>
-
         <activity android:name=".dto.Dealer" />
         <activity
             android:name=".AddProductActivity"

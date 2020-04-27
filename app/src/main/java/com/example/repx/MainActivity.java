@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private CardView cardViewDealer;
     private CardView cardViewProduct;
     private CardView cardViewCustomer;
+    private CardView cardViewSales;
+    private CardView cardViewUsers;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,30 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         cardViewDealer = (CardView) findViewById(R.id.cardView_dealer);
         cardViewProduct=(CardView) findViewById(R.id.cardView_product);
+        cardViewSales=(CardView) findViewById(R.id.cardView_sales);
+        cardViewUsers = (CardView) findViewById(R.id.cardView_user);
+
         cardViewCustomer = (CardView) findViewById(R.id.cardView_customer);
+
 
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
+
+        cardViewSales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SalesMenu.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,EditShops.class);
+                startActivity(intent);
+            }
+        });
 
         cardViewDealer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,14 +69,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cardViewCustomer.setOnClickListener(new View.OnClickListener() {
+        cardViewUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, EditShops.class);
+                Intent intent = new Intent(MainActivity.this,UserDetailsActivity.class);
                 startActivity(intent);
             }
         });
-
 
     }
 

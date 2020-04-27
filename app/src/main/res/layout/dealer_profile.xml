@@ -3,11 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_wallpaper"
+    android:background="@drawable/bg11"
+    android:orientation="vertical"
     tools:context=".DealerProfile">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:text="PhoneNumber"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dealerPhoneNumber_profile"
+        app:layout_constraintVertical_bias="1.0" />
 
     <include
         android:id="@+id/toolbar"
@@ -15,37 +27,40 @@
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/prof_picture"
+        android:layout_width="134dp"
+        android:layout_height="172dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/rep_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
 
     <EditText
         android:id="@+id/txt_dealerName_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Waniganeththi W.V.D"
-        android:textColor="#010C09"
+        android:textColor="#EEEEEE"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageview"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageview" />
 
     <EditText
         android:id="@+id/txt_dealer_code_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Colombo, SriLanka"
-        android:textColor="#010C09"
-        android:textSize="18sp"
+        android:textColor="#EEEEEE"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_dealerName_profile" />
@@ -68,7 +83,7 @@
 
 
             <LinearLayout
-                android:layout_width="338dp"
+                android:layout_width="52dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="16dp"
                 android:orientation="vertical">
@@ -83,10 +98,9 @@
 
 
             <LinearLayout
-                android:layout_width="338dp"
+                android:layout_width="329dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:orientation="vertical">
+                android:layout_marginLeft="16dp">
 
             </LinearLayout>
         </LinearLayout>
@@ -96,11 +110,12 @@
         android:id="@+id/txt_dealerArea_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
         android:text="Inventory Saler"
-        android:textColor="#010C09 "
+        android:textColor="#EEEEEE "
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_dealer_code_profile" />
 
@@ -108,9 +123,11 @@
         android:id="@+id/txt_dealerCategory_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="2019r"
         android:textColor="#010C09 "
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_dealerArea_profile" />
@@ -119,10 +136,11 @@
         android:id="@+id/txt_dealerPhoneNumber_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="2019r"
         android:textColor="#010C09 "
-        android:textSize="15sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,11 +148,11 @@
 
     <Button
         android:id="@+id/btn_update_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="210dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
-        android:width="242dp"
+        android:width="210dp"
         android:height="45dp"
         android:background="@drawable/bgbtn"
         android:text="Update"
@@ -150,9 +168,8 @@
 
     <Button
         android:id="@+id/btn_profile_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="210dp"
+        android:layout_height="39dp"
         android:width="242dp"
         android:height="45dp"
         android:background="@drawable/bgbtn2"
@@ -163,10 +180,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_update_profile"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_update_profile" />
 
     <Button
         android:id="@+id/btn_edit_profile"
@@ -180,5 +195,55 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="29dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="29dp"
+        android:text="Area"
+        android:textColor="#292b3d"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dealerCategory_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_dealerArea_profile"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="Category"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dealerPhoneNumber_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_dealerCategory_profile"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dealerArea_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dealer_code_profile"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/txt_dealer_code_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dealerName_profile"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

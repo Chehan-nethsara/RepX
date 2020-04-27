@@ -37,6 +37,7 @@
 
     <EditText
 
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="50dp"
@@ -44,83 +45,46 @@
         android:layout_marginRight="50dp"
         android:backgroundTint="@android:color/white"
         android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:hint="First Name"
-        android:textColorHint="@android:color/white" />
+        android:hint="Full Name"
+        android:textColorHint="@android:color/white"
+        android:textStyle="bold" />
+
+
     <EditText
 
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:hint="Last Name"
+        android:id="@+id/txt_regNo"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
-    <EditText
-
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@android:color/white"
         android:backgroundTint="@android:color/white"
         android:gravity="center_horizontal"
         android:hint="REG No."
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:inputType="number"
+        android:textColorHint="@android:color/white"
+        android:textStyle="bold" />
+
     <EditText
 
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@android:color/white"
         android:backgroundTint="@android:color/white"
         android:gravity="center_horizontal"
         android:hint="Email"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
-    <EditText
-
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
+        android:inputType="textEmailAddress"
         android:textColorHint="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:gravity="center_horizontal"
-        android:hint="Phone No."
-        android:layout_width="match_parent"
-        android:textStyle="bold"
-        android:layout_height="50dp"/>
-    <EditText
+        android:textStyle="bold" />
 
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:gravity="center_horizontal"
-        android:hint="Password"
-        android:layout_width="match_parent"
-        android:textStyle="bold"
-        android:layout_height="50dp"/>
-    <EditText
 
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textColorHint="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:gravity="center_horizontal"
-        android:hint="Retype Password"
-        android:layout_width="match_parent"
-        android:textStyle="bold"
-        android:layout_height="50dp"/>
+
 
     <Button
+        android:id="@+id/btn_register"
         android:textColor="@android:color/holo_blue_dark"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
