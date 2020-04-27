@@ -11,6 +11,7 @@ import android.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.repx.Customer_Details;
+import com.example.repx.EditCustomerUI;
 import com.example.repx.EditShops;
 import com.example.repx.R;
 import com.example.repx.dto.Customer;
@@ -55,6 +56,15 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
             }
         });
 
+        customerViewHolder.btnEditCustomer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EditCustomerUI.class);
+                context.startActivity(intent);
+                //setEnableCustomerFields();
+            }
+        });
+
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,7 +105,6 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + " must implement CustomerListner ");
         }
-
     }
 
     @Override
@@ -104,9 +113,5 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
         return customerList == null ? 0 : customerList.size();
     }
 
-
-    public interface CustomerListner
-    {
-        void removeCustomer(int i);
-    }
+    public interface CustomerListner { void removeCustomer(int i);}
 }
