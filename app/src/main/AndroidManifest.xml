@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.repx">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,27 +21,36 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".AddNewDealerActivity"
-            android:parentActivityName=".DealerActivity"></activity>
-        <activity android:name=".DealerActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".DealerProfile"
-            android:parentActivityName=".DealerActivity"/>
-
-        <activity android:name=".AddShop"
-            android:parentActivityName=".EditShops"></activity>
-        <activity android:name=".EditShops"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".Customer_Details"
+        <activity
+            android:name=".AddNewDealerActivity"
+            android:parentActivityName=".DealerActivity" />
+        <activity
+            android:name=".DealerActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".DealerProfile"
+            android:parentActivityName=".DealerActivity" />
+        <activity
+            android:name=".AddShop"
+            android:parentActivityName=".EditShops" />
+        <activity
+            android:name=".EditShops"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Customer_Details"
+            android:parentActivityName=".EditShops" />
+        <activity android:name=".EditCustomerUI"
             android:parentActivityName=".EditShops"></activity>
 
         <activity android:name=".dto.Dealer" />
-        <activity android:name=".AddProductActivity"
-            android:parentActivityName=".ProductActivity"></activity>
+        <activity
+            android:name=".AddProductActivity"
+            android:parentActivityName=".ProductActivity" />
         <activity android:name=".Popup" />
         <activity android:name=".product" />
-        <activity android:name=".ProductActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".ProductActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".AddSales" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SalesMenu" />
@@ -50,14 +60,11 @@
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"></activity>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
     </application>
 
 </manifest>
