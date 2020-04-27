@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private CardView cardViewProduct;
     private CardView cardViewCustomer;
     private CardView cardViewSales;
+    private CardView cardViewUsers;
 
 
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         cardViewDealer = (CardView) findViewById(R.id.cardView_dealer);
         cardViewProduct=(CardView) findViewById(R.id.cardView_product);
         cardViewSales=(CardView) findViewById(R.id.cardView_sales);
+        cardViewUsers = (CardView) findViewById(R.id.cardView_user);
 
         cardViewCustomer = (CardView) findViewById(R.id.cardView_customer);
 
@@ -63,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,UserDetailsActivity.class);
                 startActivity(intent);
             }
         });

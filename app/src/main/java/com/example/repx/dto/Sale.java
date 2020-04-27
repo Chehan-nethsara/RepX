@@ -1,7 +1,5 @@
 package com.example.repx.dto;
 
-import com.example.repx.recyclerView.adapter.SalesRecycleViewAdapter;
-
 public class Sale {
     private String id;
     private String product;
