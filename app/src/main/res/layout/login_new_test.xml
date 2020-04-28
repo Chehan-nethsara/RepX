@@ -116,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
                         android:text="Email"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -139,7 +139,7 @@
                         android:layout_below="@+id/txt_email"
                         android:layout_margin="15dp"
                         android:text="Password"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -188,11 +188,11 @@
                 android:id="@+id/tvForgot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cv"
+                android:layout_below="@+id/forgetpw"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="15dp"
                 android:text="Don't you have register yet?"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
 
             <Button
                 android:id="@+id/btn_signup"
@@ -203,7 +203,6 @@
                 android:layout_alignRight="@+id/cv"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="11dp"
-                android:layout_marginTop="25dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="9dp"
                 android:layout_marginBottom="10dp"
@@ -212,6 +211,16 @@
                 android:paddingRight="20dp"
                 android:text="Sign Up"
                 android:textColor="@color/colorPurple" />
+
+            <TextView
+                android:id="@+id/forgetpw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="Forget Password?"
+                android:textSize="15sp" />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
