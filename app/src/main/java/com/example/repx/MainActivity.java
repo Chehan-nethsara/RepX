@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private CardView cardViewUsers;
 
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -30,21 +29,14 @@ public class MainActivity extends AppCompatActivity {
         cardViewProduct=(CardView) findViewById(R.id.cardView_product);
         cardViewSales=(CardView) findViewById(R.id.cardView_sales);
         cardViewUsers = (CardView) findViewById(R.id.cardView_user);
-
         cardViewCustomer = (CardView) findViewById(R.id.cardView_customer);
+
 
 
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
-        cardViewSales.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SalesMenu.class);
-                startActivity(intent);
-            }
-        });
-
+   
         cardViewCustomer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                startActivity(intent);
+            }
+        });
+        cardViewSales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SalesMenu.class);
                 startActivity(intent);
             }
         });

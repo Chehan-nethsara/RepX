@@ -24,10 +24,11 @@ import java.util.Map;
 
 
 public class ViewSale extends AppCompatActivity {
+
     private Sale sale;
     private FirebaseFirestore db;
     private static final String TAG = "ViewSale";
-    private EditText product,qty,saleCustomer,date,total;
+    private EditText product,qty,saleCustomer,discount,total;
     private Toolbar toolbar;
     private Button editSale, deleteSale, saveSale;
     static LinearLayout containerView;
@@ -51,7 +52,7 @@ public class ViewSale extends AppCompatActivity {
         product = findViewById(R.id.viewSale_product);
         qty = findViewById(R.id.viewSale_qty);
         saleCustomer = findViewById(R.id.viewSale_customer);
-        date = findViewById(R.id.viewSale_date);
+        discount = findViewById(R.id.viewSale_date);
         total = findViewById(R.id.viewSale_total);
         editSale = findViewById(R.id.edit_sale);
         deleteSale = findViewById(R.id.delete_sale);
@@ -62,11 +63,11 @@ public class ViewSale extends AppCompatActivity {
         product.setEnabled(false);
         qty.setEnabled(false);
         saleCustomer.setEnabled(false);
-        date.setEnabled(false);
+        discount.setEnabled(false);
         total.setEnabled(false);
         setSaleDetails();
 
-       /* editSale.setOnClickListener(new View.OnClickListener() {
+        editSale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setEnabledFieldsView();
@@ -78,7 +79,7 @@ public class ViewSale extends AppCompatActivity {
             public void onClick(View v) {
                 saveViewSale();
             }
-        });*/
+        });
 
         deleteSale.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,32 +100,33 @@ public class ViewSale extends AppCompatActivity {
         finish();
     }
 
-   /* private void saveViewSale() {
-        if(!sale.getProduct().equals(product.getText().toString()) || !sale.getCustomer().equals(saleCustomer.getText().toString())
-                || !sale.getQty().equals(qty.getText().toString()) || !sale.getDiscout().equals(date.getText().toString()) ||
-                !sale.getTotal().equals(total.getText().toString())){
-            sale.setProduct(product.getText().toString());
+    private void saveViewSale() {
+        if(!sale.getProduct().equals(product.getText().toString()) || !sale.getQty().equals(qty.getText().toString())
+                || !sale.getCustomer().equals(saleCustomer.getText().toString())
+                || !sale.getDiscout().equals(discount.getText().toString()) || !sale.getTotal().equals(total.getText().toString())){
             sale.setCustomer(saleCustomer.getText().toString());
+            sale.setDiscout(discount.getText().toString());
+            sale.setProduct(product.getText().toString());
             sale.setQty(qty.getText().toString());
-            sale.setDiscout(date.getText().toString());
             sale.setTotal(total.getText().toString());
 
 
-            Map<String, Object> sales = new HashMap<>();
-            sales.put("product",product);
-            sales.put("customer",saleCustomer);
-            sales.put("qty",qty);
-            sales.put("discount",date);
-            sales.put("total",total);
+            Map<String, Object> salesMap = new HashMap<>();
+            salesMap.put("customer",sale.getCustomer());
+            salesMap.put("discount",sale.getDiscout());
+            salesMap.put("product",sale.getProduct());
+            salesMap.put("qty",sale.getQty());
+            salesMap.put("total",sale.getTotal());
+
+            db.collection("Sales").document(sale.getId()).update(salesMap);
 
 
-            db.collection("Sales").document(sale.getId()).update(sales);
 
 
         }
         successMessage();
         setDisableFieldsView();
-    }*/
+    }
 
     //success message
     private void successMessage(){
@@ -134,9 +136,9 @@ public class ViewSale extends AppCompatActivity {
     //to disable fields
     private void setDisableFieldsView(){
         product.setEnabled(false);
-        saleCustomer.setEnabled(false);
         qty.setEnabled(false);
-        date.setEnabled(false);
+        saleCustomer.setEnabled(false);
+        discount.setEnabled(false);
         total.setEnabled(false);
         saveSale.setEnabled(false);
     }
@@ -144,9 +146,9 @@ public class ViewSale extends AppCompatActivity {
     //to enable fields
     private void setEnabledFieldsView(){
         product.setEnabled(true);
-        saleCustomer.setEnabled(true);
         qty.setEnabled(true);
-        date.setEnabled(true);
+        saleCustomer.setEnabled(true);
+        discount.setEnabled(true);
         total.setEnabled(true);
         saveSale.setEnabled(true);
     }
@@ -154,9 +156,9 @@ public class ViewSale extends AppCompatActivity {
 
     private void setSaleDetails(){
         product.setText(sale.getProduct());
-        saleCustomer.setText(sale.getCustomer());
         qty.setText(sale.getQty());
-        date.setText(sale.getDiscout());
+        saleCustomer.setText(sale.getCustomer());
+        discount.setText(sale.getDiscout());
         total.setText(sale.getTotal());
     }
 }
