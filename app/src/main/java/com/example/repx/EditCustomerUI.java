@@ -27,7 +27,6 @@ public class EditCustomerUI extends AppCompatActivity {
     private EditText txt_upCus_ShopName, txt_upCus_OwnerName, txt_upCus_Phone, txt_upCus_Email, txt_upCus_Address;
     private Toolbar toolbar;
     private Button btn_upCus_UpdateCustomer;
-//    private static final String TAG = "Customer Update";
     static RelativeLayout relativeCustomer;
 
     @Override
@@ -37,6 +36,7 @@ public class EditCustomerUI extends AppCompatActivity {
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setTitle("Customer Update");
+
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -67,12 +67,9 @@ public class EditCustomerUI extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CustomerProfileUpdate();
-                Intent intent = new Intent(context, EditShops.class);
-                context.startActivity(intent);
             }
         });
 
-//        //setDisableCustomerFields();
         setCustomerUpdateProfile();
     }
 
@@ -101,31 +98,20 @@ public class EditCustomerUI extends AppCompatActivity {
         }
 
         successUpdateCustomerMsg();
-        //setDisableCustomerFields();
     }
 
     //to set data to customer update
    private void setCustomerUpdateProfile(){
-//       txt_upCus_ShopName.setText(customer.getShopNameCustomer());
-//       txt_upCus_OwnerName.setText(customer.getOwnerNameCustomer());
-//       txt_upCus_Phone.setText(customer.getPhoneCustomer());
-//       txt_upCus_Email.setText(customer.getEmailCustomer());
-//       txt_upCus_Address.setText(customer.getAddressCustomer());
+       txt_upCus_ShopName.setText(customer.getShopNameCustomer());
+       txt_upCus_OwnerName.setText(customer.getOwnerNameCustomer());
+       txt_upCus_Phone.setText(customer.getPhoneCustomer());
+       txt_upCus_Email.setText(customer.getEmailCustomer());
+       txt_upCus_Address.setText(customer.getAddressCustomer());
+
     }
 
     //success message
     private void successUpdateCustomerMsg() {
         Snackbar.make(relativeCustomer,"Customer Updated Successfully!",Snackbar.LENGTH_LONG).show();
     }
-
-    //to disable the fields
-//    private void setDisableCustomerFields() {
-//        txt_upCus_ShopName.setEnabled(false);
-//        txt_upCus_OwnerName.setEnabled(false);
-//        txt_upCus_Phone.setEnabled(false);
-//        txt_upCus_Email.setEnabled(false);
-//        txt_upCus_Address.setEnabled(false);
-//        btn_upCus_UpdateCustomer.setEnabled(false);
-//   }
-
 }

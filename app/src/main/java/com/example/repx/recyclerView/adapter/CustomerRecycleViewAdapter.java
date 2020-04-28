@@ -12,7 +12,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.repx.Customer_Details;
 import com.example.repx.EditCustomerUI;
-import com.example.repx.EditShops;
 import com.example.repx.R;
 import com.example.repx.dto.Customer;
 import com.example.repx.recyclerView.view_holder.CustomerViewHolder;
@@ -60,8 +59,9 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EditCustomerUI.class);
+                intent.putExtra("CUSTOMER",new Gson().toJson(customerList.get(i)));
                 context.startActivity(intent);
-                //setEnableCustomerFields();
+
             }
         });
 
