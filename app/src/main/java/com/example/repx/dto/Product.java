@@ -5,14 +5,14 @@ public class Product {
     private String productDocumnetID;
     private String productName;
     private String productCode;
-    private Double prductQuantity;
+    private String prductQuantity;
     private String productPrice;
     private String productDescription;
 
     public Product() {
     }
 
-    public Product(String productDocumnetID, String productName, String productCode, Double prductQuantity, String productPrice, String productDescription) {
+    public Product(String productDocumnetID, String productName, String productCode, String prductQuantity, String productPrice, String productDescription) {
         this.productDocumnetID = productDocumnetID;
         this.productName = productName;
         this.productCode = productCode;
@@ -45,11 +45,11 @@ public class Product {
         this.productCode = productCode;
     }
 
-    public Double getPrductQuantity() {
+    public String getPrductQuantity() {
         return prductQuantity;
     }
 
-    public void setPrductQuantity(Double prductQuantity) {
+    public void setPrductQuantity(String prductQuantity) {
         this.prductQuantity = prductQuantity;
     }
 
