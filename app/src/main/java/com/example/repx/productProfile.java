@@ -1,57 +1,62 @@
 package com.example.repx;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.repx.dto.Customer;
+import com.example.repx.dto.Product;
 import com.google.gson.Gson;
 
-public class productProfile extends AppCompatActivity {
+public class productProfile extends AppCompatActivity  {
 
-  /*  private Toolbar toolbar;
-    private Products products;
-    private TextView shopName, ownerName, email, phone, address;
-
+   private Toolbar toolbar;
+    private Product products;
+    private TextView profileProductName, profileProductPrice, profileProductDescription, profileProductCode, profileProductQuntity;
+    private ImageView imgSelectedProductImageProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_details);
+        setContentView(R.layout.activity_profile_product);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Customer Profile");
+        toolbar.setTitle("Product Profile");
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        this.products = new Gson().fromJson(getIntent().getStringExtra("CUSTOMER"),Customer.class);
+        this.products = new Gson().fromJson(getIntent().getStringExtra("PRODUCT"), Product.class);
 
-        shopName = findViewById(R.id.txt_customer_profile_shopname);
-        shopName.setEnabled(false);
+        imgSelectedProductImageProfile = findViewById(R.id.txt_product_profile_image);
+        imgSelectedProductImageProfile.setEnabled(false);
 
-        ownerName = findViewById(R.id.txt_customer_profile_ownername);
-        ownerName.setEnabled(false);
+        profileProductName = findViewById(R.id.txt_product_profile_name);
+        profileProductName.setEnabled(false);
 
-        email = findViewById(R.id.txt_customer_profile_email);
-        email.setEnabled(false);
+        profileProductPrice = findViewById(R.id.txt_product_profile_price);
+        profileProductPrice.setEnabled(false);
 
-        phone = findViewById(R.id.txt_customer_profile_phone);
-        phone.setEnabled(false);
+        profileProductDescription = findViewById(R.id.txt_product_profile_description);
+        profileProductDescription.setEnabled(false);
 
-        address = findViewById(R.id.txt_customer_profile_address);
-        address.setEnabled(false);
+        profileProductCode = findViewById(R.id.txt_product_profile_code);
+        profileProductCode.setEnabled(false);
 
-        setCustomerProfile();
+        profileProductQuntity = findViewById(R.id.txt_product_profile_quntity);
+        profileProductQuntity.setEnabled(false);
+
+        setProductProfile();
     }
 
-    private void setCustomerProfile(){
-        shopName.setText(customer.getShopNameCustomer());
-        ownerName.setText(customer.getOwnerNameCustomer());
-        email.setText(customer.getEmailCustomer());
-        phone.setText(customer.getPhoneCustomer());
-        address.setText(customer.getAddressCustomer());
+    private void setProductProfile(){
+        profileProductName.setText(products.getProductName());
+        profileProductPrice.setText(products.getProductPrice());
+        profileProductDescription.setText(products.getProductDescription());
+        profileProductCode.setText(products.getProductCode());
+        profileProductQuntity.setText(products.getPrductQuantity());
     }
-*/
+
 }

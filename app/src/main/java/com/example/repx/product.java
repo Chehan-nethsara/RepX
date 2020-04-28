@@ -3,10 +3,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Product;
@@ -25,11 +30,17 @@ public class product extends AppCompatActivity {
     private Toolbar toolbar;
     private Button btnEditProduct,btnUpdateProductProfile;
     static ConstraintLayout container;
+    ImageView mImageView;
+    Button mChooseBtn;
+
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product);
+
+
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -45,6 +56,7 @@ public class product extends AppCompatActivity {
 
 
         System.out.println(new Gson().toJson(this.products));
+        mImageView = findViewById(R.id.img_productView);
 
         productName = findViewById(R.id.product_name_profile);
         productPrice = findViewById(R.id.product_price_profile);
@@ -73,6 +85,7 @@ public class product extends AppCompatActivity {
         setProducts();
         setDisableFields();
     }
+
 
 
     private void updateProduct() {
@@ -135,20 +148,15 @@ public class product extends AppCompatActivity {
         productName.requestFocus();
         productPrice.setEnabled(true);
         productDescription.setEnabled(true);
+        productCode.setEnabled(true);
         productQuntity.setEnabled(true);
         btnUpdateProductProfile.setEnabled(true);
 
     }
 
-/*
-    //to set data to dealer profile
-  private void setProductspage(){
-        productName.setText(products.getProductName());
-        productPrice.setText(products.getProductPrice());
-        productDescription.setText(products.getProductDescription());
-        productCode.setText(products.getProductCode());
-        productQuntity.setText(productQuntity.getText().toString());
-    }
-    */
+
+
+
+
 
 }

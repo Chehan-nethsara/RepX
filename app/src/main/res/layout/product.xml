@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg11"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".productProfile">
 
     <include
         android:id="@+id/toolbar"
