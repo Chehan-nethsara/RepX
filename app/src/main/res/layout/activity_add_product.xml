@@ -14,19 +14,30 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/bgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/header_add_product"
+        android:theme="@style/ToolbarTheme"
+        android:elevation="5dp"/>
 
-    <!--<TextView-->
-       <!-- android:id="@+id/tvSignUp"-->
-       <!-- android:layout_width="wrap_content"-->
-       <!-- android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="40dp"-->
-       <!-- android:elevation="10dp"-->
-        <!--android:transitionName="tvLogin"-->
-        <!--android:text="NEW PRODUCT"-->
-        <!--android:textColor="@color/colorWhite"-->
-        <!--android:textSize="24dp"-->
-        <!--android:textStyle="bold" />-->
+    <TextView
+        android:id="@+id/Header_add_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:elevation="10dp"
+        android:transitionName="tvLogin"
+        android:text="NEW    PRODUCT"
+        android:textColor="#e6e6e6"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+
+
 
     <ImageView
         android:id="@+id/circle1"
@@ -99,13 +110,13 @@
                         app:srcCompat="@drawable/ic_image_black_24dp" />
 
                     <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:id="@+id/btn_selectProductImage"
-                        android:background="@drawable/bg_ui"
-                        android:text="Choose Image"
                         style="@style/Base.Widget.AppCompat.Button.Coloved"
-                        android:textColor="@color/colorWhite" />
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:background="@drawable/bg_ui"
+                        android:text="Choose   Image"
+                        android:textColor="#e6e6e6" />
 
                     <TextView
 
@@ -113,7 +124,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Product Name"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="
+ #330066"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -130,7 +142,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Price"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="
+ #330066"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -146,7 +159,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Description"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="
+ #330066"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -163,7 +177,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Code"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="
+ #330066"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -180,7 +195,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Quntity"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="
+ #330066"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -198,6 +214,8 @@
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="55dp"
+                        android:textColor="
+ #330066"
                         android:gravity="center"
                         android:text="Dealer"
                         android:textSize="25sp" />

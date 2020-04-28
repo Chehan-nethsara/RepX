@@ -67,6 +67,8 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         String productName = productList.get(i).getProductName();
         String productCode = productList.get(i).getProductCode();
 
+
+
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("/products/"+productCode.trim());
 
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
