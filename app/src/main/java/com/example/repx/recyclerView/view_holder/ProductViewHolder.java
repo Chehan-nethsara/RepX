@@ -14,7 +14,7 @@ import com.example.repx.R;
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 
 
-    public TextView productName;
+    public TextView productName, productPrice;
     public ImageView productImage;
     public Button editProductButton;
     public Button deleteProductButton;
@@ -22,6 +22,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     public ProductViewHolder(@NonNull final View itemView, final Context context) {
         super(itemView);
         this.productName = itemView.findViewById(R.id.txt_productName);
+        this.productPrice = itemView.findViewById(R.id.txt_productPrice);
         this.productImage = itemView.findViewById(R.id.img_productView);
         this.editProductButton = itemView.findViewById(R.id.btn_editProduct);
         this.deleteProductButton = itemView.findViewById(R.id.btn_deleteProduct);

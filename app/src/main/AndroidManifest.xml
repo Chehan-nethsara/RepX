@@ -50,7 +50,10 @@
             android:name=".AddProductActivity"
             android:parentActivityName=".ProductActivity" />
         <activity android:name=".Popup" />
-        <activity android:name=".product" />
+        <activity android:name=".product"
+            android:parentActivityName=".ProductActivity"/>
+        <activity android:name=".productProfile"
+            android:parentActivityName=".ProductActivity"/>
         <activity
             android:name=".ProductActivity"
             android:parentActivityName=".MainActivity" />

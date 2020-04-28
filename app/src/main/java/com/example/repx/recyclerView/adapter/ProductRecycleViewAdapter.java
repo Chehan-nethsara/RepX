@@ -20,6 +20,7 @@ import com.example.repx.R;
 import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Product;
 import com.example.repx.product;
+import com.example.repx.productProfile;
 import com.example.repx.recyclerView.view_holder.DealerViewHolder;
 import com.example.repx.recyclerView.view_holder.ProductViewHolder;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -65,6 +66,7 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
     public void onBindViewHolder(@NonNull final ProductViewHolder productViewHolder, final int i) {
 
         String productName = productList.get(i).getProductName();
+        String productPrice = productList.get(i).getProductPrice();
         String productCode = productList.get(i).getProductCode();
 
 
@@ -86,6 +88,7 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         });
 
         productViewHolder.productName.setText(productName);
+        productViewHolder.productPrice.setText(productPrice);
         productViewHolder.editProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +112,7 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, product.class);
+                Intent intent = new Intent(context, productProfile.class);
                 intent.putExtra("PRODUCT",new Gson().toJson(productList.get(i)));
                 context.startActivity(intent);
             }
