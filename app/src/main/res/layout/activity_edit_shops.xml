@@ -33,6 +33,7 @@ tools:context=".EditShops">
         android:textSize="24dp"
         android:textStyle="bold" />
 
+
     <ImageView
         android:id="@+id/circle1"
         android:layout_width="134dp"
