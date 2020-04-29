@@ -48,6 +48,11 @@
             android:orientation="horizontal"
             android:paddingLeft="25dp">
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/product_profile" />
+
             <TextView
                 android:id="@+id/txt_product_profile_name"
                 android:layout_width="wrap_content"
@@ -66,6 +71,11 @@
             android:orientation="horizontal"
             android:paddingLeft="25dp">
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile_product_price" />
+
 
             <TextView
                 android:id="@+id/txt_product_profile_price"
@@ -78,13 +88,18 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
             android:paddingLeft="25dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile_product_description"  />
+
 
 
 
@@ -106,6 +121,11 @@
             android:orientation="horizontal"
             android:paddingLeft="25dp">
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/profile_product_code" />
+
 
             <TextView
                 android:id="@+id/txt_product_profile_code"
@@ -125,6 +145,12 @@
             android:orientation="horizontal"
             android:paddingLeft="25dp">
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/product_profile_quntity" />
+
+
 
 
             <TextView
@@ -138,4 +164,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
+
+
+
 </LinearLayout>
