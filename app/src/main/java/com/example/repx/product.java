@@ -4,6 +4,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.repx.dto.Dealer;
 import com.example.repx.dto.Product;
@@ -24,12 +26,14 @@ import java.util.Map;
 
 public class product extends AppCompatActivity {
 
+    private Context context;
     private Product products;
     private FirebaseFirestore db;
     private EditText productName, productPrice, productDescription, productCode, productQuntity, productDealer;
     private Toolbar toolbar;
     private Button btnEditProduct,btnUpdateProductProfile;
-    static ConstraintLayout container;
+
+    static RelativeLayout relativeProduct;
     ImageView mImageView;
     Button mChooseBtn;
 
@@ -55,40 +59,44 @@ public class product extends AppCompatActivity {
         this.products = new Gson().fromJson(getIntent().getStringExtra("PRODUCT"), Product.class);
 
 
-        System.out.println(new Gson().toJson(this.products));
+       // System.out.println(new Gson().toJson(this.products));
         mImageView = findViewById(R.id.img_productView);
 
         productName = findViewById(R.id.product_name_profile);
-        productPrice = findViewById(R.id.product_price_profile);
-        productDescription = findViewById(R.id.product_description_profile);
-        productCode = findViewById(R.id.product_code_profile);
-        productQuntity = findViewById(R.id.product_quntity_profile);
-        btnEditProduct = findViewById(R.id.btn_edit_profileProduct);
-        btnUpdateProductProfile= findViewById(R.id.btn_profile_product_update);
-        container = findViewById(R.id.profileProduct);
+        productName.setEnabled(true);
 
-        btnEditProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setEnabledFields();
-            }
-        });
+        productPrice = findViewById(R.id.product_price_profile);
+        productPrice.setEnabled(true);
+
+        productDescription = findViewById(R.id.product_description_profile);
+        productDescription.setEnabled(true);
+
+        productCode = findViewById(R.id.product_code_profile);
+        productCode.setEnabled(true);
+
+        productQuntity = findViewById(R.id.product_quntity_profile);
+        productQuntity.setEnabled(true);
+       // btnEditProduct = findViewById(R.id.btn_edit_profileProduct);
+        btnUpdateProductProfile= findViewById(R.id.btn_profile_product_update);
+        //container = findViewById(R.id.profileProduct);
+        relativeProduct = findViewById(R.id.profileProduct);
+
 
         btnUpdateProductProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               updateProduct();
+                ProductProfileUpdate();
             }
         });
 
+        setProductUpdateProfile();
 
-        setProducts();
-        setDisableFields();
+
     }
 
 
 
-    private void updateProduct() {
+   /* private void updateProduct() {
         if(!products.getProductName().equals(productName.getText().toString()) || !products.getProductPrice().equals(productPrice.getText().toString())
                 || !products.getProductDescription().equals(productDescription.getText().toString()) || !products.getProductCode().equals(productCode.getText().toString())
                 || !(products.getPrductQuantity().equals(productQuntity.getText().toString()))){
@@ -111,20 +119,64 @@ public class product extends AppCompatActivity {
 
         db.collection("product").document(products.getProductDocumnetID()).update(productMap);
 
+    }*/
+
+ //   successMessage();
+    //setDisableFields();
+
+//}
+
+    private void ProductProfileUpdate(){
+        if(!products.getProductName().equals(productName.getText().toString()) ||
+                !products.getProductPrice().equals(productPrice.getText().toString()) ||
+                !products.getProductDescription().equals(productDescription.getText().toString()) ||
+                !products.getProductCode().equals(productCode.getText().toString()) ||
+                !products.getPrductQuantity().equals(productQuntity.getText().toString()))
+        {
+            products.setProductName(productName.getText().toString());
+            products.setProductPrice(productPrice.getText().toString());
+            products.setProductDescription(productDescription.getText().toString());
+            products.setProductCode(productCode.getText().toString());
+            products.setPrductQuantity(productQuntity.getText().toString());
+
+            Map<String, Object> productMap = new HashMap<>();
+
+            productMap.put("productName", products.getProductName());
+            productMap.put("productPrice", products.getProductPrice());
+            productMap.put("productDescription", products.getProductDescription());
+            productMap.put("productCode", products.getProductCode());
+            productMap.put("productQuntity", products.getPrductQuantity());
+
+            db.collection("Product").document(products.getProductDocumnetID()).update(productMap);
+        }
+
+        successMessage();
     }
 
-    successMessage();
-    setDisableFields();
+    //to set data to customer update
+    private void setProductUpdateProfile(){
+        productName.setText(products.getProductName());
+        productPrice.setText(products.getProductPrice());
+        productDescription.setText(products.getProductDescription());
+        productCode.setText(products.getProductCode());
+        productQuntity.setText(products.getPrductQuantity());
 
-}
+    }
 
 
+
+//}
+
+
+
+
+    //success message
     private void successMessage(){
-        Snackbar.make(container,"Updated Successfully!",Snackbar.LENGTH_LONG).show();
+        Snackbar.make(relativeProduct,"Updated Successfully!",Snackbar.LENGTH_LONG).show();
         //Toast.makeText(this,"Updated Successfully",Toast.LENGTH_LONG).show();
     }
 
-   private void setProducts(){
+  /* private void setProducts(){
        productName.setText(products.getProductName());
        productPrice.setText(products.getProductPrice());
        productDescription.setText(products.getProductDescription());
@@ -152,7 +204,7 @@ public class product extends AppCompatActivity {
         productQuntity.setEnabled(true);
         btnUpdateProductProfile.setEnabled(true);
 
-    }
+    }*/
 
 
 
