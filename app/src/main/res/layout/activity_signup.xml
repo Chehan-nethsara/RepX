@@ -6,7 +6,7 @@
     android:background="@drawable/bg8"
     android:orientation="vertical"
     android:alpha="0.9"
-    tools:context=".Login">
+    >
 
     <RelativeLayout
         android:layout_marginTop="-50dp"

@@ -2,11 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:focusableInTouchMode="true"
-    android:focusable="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:ignore="VectorDrawableCompat"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".Login">
 
     <androidx.appcompat.widget.Toolbar
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvDesc"
         android:layout_alignLeft="@+id/tvDesc"
-        android:text="Login"
+        android:text="Sign Up"
         android:transitionName="Login"
         android:textColor="@color/colorWhite"
         android:textSize="30sp"
@@ -91,6 +90,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/rlayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -100,9 +100,11 @@
                 android:id="@+id/cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/colorWhite"
+                app:cardCornerRadius="10dp"
                 app:cardElevation="4dp">
 
                 <RelativeLayout
@@ -111,9 +113,56 @@
                     android:paddingBottom="35dp">
 
                     <TextView
+                        android:id="@+id/tvEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:text="Full Name"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvEmail"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_marginRight="15dp"
+                        android:drawablePadding="30dp"
+                        android:inputType="textEmailAddress"
+                        android:padding="10dp" />
+
+
+                    <TextView
                         android:id="@+id/tvUsername"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_name"
+                        android:layout_margin="15dp"
+                        android:text="Registration No"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txt_regNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvUsername"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:drawablePadding="30dp"
+                        android:inputType="text"
+                        android:padding="10dp" />
+
+                    <TextView
+                        android:id="@+id/tvPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_regNo"
                         android:layout_margin="15dp"
                         android:text="Email"
                         android:textColor="@color/colorPrimary"
@@ -124,35 +173,12 @@
                         android:id="@+id/txt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvUsername"
+                        android:layout_below="@+id/tvPassword"
+                        android:textColor="@color/colorPrimaryDark"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
-                        android:drawableRight="@drawable/login_person"
                         android:drawablePadding="30dp"
                         android:inputType="text"
-                        android:padding="10dp" />
-
-                    <TextView
-                        android:id="@+id/tvPassword"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/txt_email"
-                        android:layout_margin="15dp"
-                        android:text="Password"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/txt_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvPassword"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:drawableRight="@drawable/login_lock"
-                        android:drawablePadding="30dp"
-                        android:inputType="textPassword"
                         android:padding="10dp" />
 
                 </RelativeLayout>
@@ -166,51 +192,23 @@
                 android:layout_alignRight="@+id/cv"
                 android:layout_alignBottom="@+id/cv"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="35dp"
-                android:layout_marginRight="35dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="65dp"
                 android:layout_marginBottom="-20dp"
                 android:elevation="10dp">
 
                 <Button
-                    android:id="@+id/btn_signin"
+                    android:id="@+id/btn_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:background="@drawable/bg_ui"
-                    android:text="Login"
-                    android:textSize="15dp"
+                    android:text="Sign Up"
+                    android:textSize="17dp"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite" />
             </RelativeLayout>
-
-            <Button
-                android:id="@+id/btn_signup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/forgetpw"
-                android:layout_alignLeft="@+id/cv"
-                android:layout_alignRight="@+id/cv"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="11dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="9dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/fb_button"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text="Sign Up"
-                android:textColor="@color/colorPurple" />
-
-            <TextView
-                android:id="@+id/forgetpw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/cv"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:text="Forget Password?"
-                android:textSize="15sp" />
         </RelativeLayout>
     </ScrollView>
+
 </RelativeLayout>

@@ -123,7 +123,7 @@ public class AddShop extends AppCompatActivity {
 
     private void showSuccessToast(){
         Toast.makeText(this, "Customer Added Successfully", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, AddShop.class);
+        Intent intent = new Intent(this, EditShops.class);
         startActivity(intent);
         finish();
     }
