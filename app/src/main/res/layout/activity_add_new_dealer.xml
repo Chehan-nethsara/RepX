@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,111 +10,184 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bgHeader"
+        android:layout_marginTop="56dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:contentDescription="header"
+        android:background="@drawable/login_header"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="170dp"
+        android:src="@drawable/logo4"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="107dp"
+        android:text="New Dealer"
+        android:textStyle="italic"
+        android:textColor="@color/colorWhite"
+        android:textSize="27sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginLeft="-325dp"
+        android:src="@drawable/add_new_dealer"/>
+
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_below="@+id/bgHeader"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle3"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-80dp"
+        android:layout_marginBottom="-30dp"
+        android:src="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/circle4"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="280dp"
+        android:layout_marginBottom="-90dp"
+        android:layout_marginRight="-70dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle5"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="320dp"
+        android:layout_marginBottom="300dp"
+        android:layout_marginRight="-70dp"
+        android:src="@drawable/circle" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bbbb"
-        android:orientation="vertical">
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="50dp">
 
-        <TextView
+        <RelativeLayout
+            android:id="@+id/rlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity=""
-            android:layout_marginTop="70dp"
-            android:background="#D2D4E7"
-            android:text="New Dealer"
-            android:gravity="center_horizontal"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            tools:text="New  Dealer" />
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="50dp">
+
+                <EditText
+                    android:id="@+id/txt_dealer_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="90sp"
+                    android:layout_marginRight="50dp"
+                    android:autofillHints="@string/Dealer_Code"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="left"
+                    android:hint="@string/Dealer_Code"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorPrimary" />
 
 
-        <EditText
-            android:id="@+id/txt_dealer_code"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="60sp"
-            android:layout_marginRight="50dp"
-            android:autofillHints="@string/Dealer_Code"
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:hint="@string/Dealer_Code"
-            android:inputType="text"
-           />
+                <EditText
+                    android:id="@+id/txt_dealer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="17sp"
+                    android:layout_marginRight="50dp"
+                    android:autofillHints="@string/Dealer_Name"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="left"
+                    android:hint="@string/Dealer_Name"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorPrimary" />
 
 
-        <EditText
-            android:id="@+id/txt_dealer_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="17sp"
-            android:layout_marginRight="50dp"
-            android:autofillHints="@string/Dealer_Name"
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:hint="@string/Dealer_Name"
-            android:inputType="text"
-            />
+                <EditText
+                    android:id="@+id/txt_dealerArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="17sp"
+                    android:layout_marginRight="50dp"
+                    android:autofillHints="@string/Area"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="left"
+                    android:hint="@string/Area"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorPrimary" />
 
 
-        <EditText
-            android:id="@+id/txt_dealerArea"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="17sp"
-            android:layout_marginRight="50dp"
-            android:autofillHints="@string/Area"
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:hint="@string/Area"
-            android:inputType="text"
-            />
+                <EditText
+                    android:id="@+id/txt_dealerCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="17sp"
+                    android:layout_marginRight="50dp"
+                    android:autofillHints="@string/Category"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="left"
+                    android:hint="@string/Category"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorPrimary" />
 
 
-        <EditText
-            android:id="@+id/txt_dealerCategory"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="17sp"
-            android:layout_marginRight="50dp"
-            android:autofillHints="@string/Category"
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:hint="@string/Category"
-            android:inputType="text"
-            />
+                <EditText
+                    android:id="@+id/txt_dealerPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="17sp"
+                    android:layout_marginRight="50dp"
+                    android:autofillHints="@string/Phone_number"
+                    android:backgroundTint="@android:color/black"
+                    android:gravity="left"
+                    android:hint="@string/Phone_number"
+                    android:inputType="text"
+                    android:textColorHint="@color/colorPrimary" />
 
 
-        <EditText
-            android:id="@+id/txt_dealerPhoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="17sp"
-            android:layout_marginRight="50dp"
-            android:autofillHints="@string/Phone_number"
-            android:backgroundTint="@android:color/black"
-            android:gravity="center_horizontal"
-            android:hint="@string/Phone_number"
-            android:inputType="text"
-            />
+                <Button
+                    android:id="@+id/btn_addNewDealer"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/bg_ui"
+                    android:text="ADD"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
 
-
-        <Button
-            android:id="@+id/btn_addNewDealer"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/bg_button"
-            android:text="ADD"
-            android:textSize="25sp" />
-
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
