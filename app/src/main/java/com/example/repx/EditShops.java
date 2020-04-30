@@ -5,14 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.widget.ImageButton;
 
 import com.example.repx.dto.Customer;
 import com.example.repx.recyclerView.adapter.CustomerRecycleViewAdapter;
@@ -45,6 +46,7 @@ public class EditShops extends AppCompatActivity implements CustomerRecycleViewA
         setSupportActionBar(toolbar);
 
         recyclerViewCustomer = findViewById(R.id.recyclerView_Customer);
+//        btn_Add_New_Customer_New = findViewById(R.id.btn_add_New_cudtomer_ui);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -54,6 +56,7 @@ public class EditShops extends AppCompatActivity implements CustomerRecycleViewA
         getCustomersList();
 
     }
+
 
     private void getCustomersList() {
         db.collection("Customer")
