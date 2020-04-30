@@ -15,7 +15,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
 
 
     public TextView productName, productPrice;
-    public ImageView productImage;
+    public ImageView productImage, imgSelectedProductImageProfile;
     public Button editProductButton;
     public Button deleteProductButton;
 
@@ -24,6 +24,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         this.productName = itemView.findViewById(R.id.txt_productName);
         this.productPrice = itemView.findViewById(R.id.txt_productPrice);
         this.productImage = itemView.findViewById(R.id.img_productView);
+        this.imgSelectedProductImageProfile = itemView.findViewById(R.id.txt_product_profile_image);
         this.editProductButton = itemView.findViewById(R.id.btn_editProduct);
         this.deleteProductButton = itemView.findViewById(R.id.btn_deleteProduct);
     }

@@ -196,13 +196,7 @@ public class AddProductActivity extends AppCompatActivity {
         CropImage.startPickImageActivity(this);
     }
 
-    //CROP REQUEST JAVA
-//    private void croprequest(Uri imageUri) {
-//        CropImage.activity(imageUri)
-//                .setGuidelines(CropImageView.Guidelines.ON)
-//                .setMultiTouchEnabled(true)
-//                .start(this);
-//    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -218,15 +212,7 @@ public class AddProductActivity extends AppCompatActivity {
             //croprequest(imageUri);
         }
 
-//        //RESULT FROM CROPING ACTIVITY
-//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-//            if (resultCode == RESULT_OK) {
-//                imagePath = result.getUri();
-//                System.out.println("IMAGE PATH ======== " + imagePath);
-//                Picasso.get().load(imagePath).into(imgSelectedProductImage);
-//            }
-//        }
+
     }
 
 
