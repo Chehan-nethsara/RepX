@@ -60,7 +60,7 @@ public class product extends AppCompatActivity {
 
 
        // System.out.println(new Gson().toJson(this.products));
-        mImageView = findViewById(R.id.img_productView);
+      //  mImageView = findViewById(R.id.img_productView);
 
         productName = findViewById(R.id.product_name_profile);
         productName.setEnabled(true);
@@ -96,35 +96,7 @@ public class product extends AppCompatActivity {
 
 
 
-   /* private void updateProduct() {
-        if(!products.getProductName().equals(productName.getText().toString()) || !products.getProductPrice().equals(productPrice.getText().toString())
-                || !products.getProductDescription().equals(productDescription.getText().toString()) || !products.getProductCode().equals(productCode.getText().toString())
-                || !(products.getPrductQuantity().equals(productQuntity.getText().toString()))){
 
-
-            System.out.println("===================== Running");
-
-            products.setProductName(productName.getText().toString());
-            products.setProductPrice(productPrice.getText().toString());
-            products.setProductDescription(productDescription.getText().toString());
-            products.setProductCode(productCode.getText().toString());
-           products.setPrductQuantity(productQuntity.getText().toString());
-
-        Map<String, Object> productMap = new HashMap<>();
-        productMap.put("name", products.getProductName());
-        productMap.put("price", products.getProductPrice());
-        productMap.put("description", products.getProductDescription());
-        productMap.put("code", products.getProductCode());
-        productMap.put("quntity", products.getPrductQuantity());
-
-        db.collection("product").document(products.getProductDocumnetID()).update(productMap);
-
-    }*/
-
- //   successMessage();
-    //setDisableFields();
-
-//}
 
     private void ProductProfileUpdate(){
         if(!products.getProductName().equals(productName.getText().toString()) ||
@@ -141,13 +113,13 @@ public class product extends AppCompatActivity {
 
             Map<String, Object> productMap = new HashMap<>();
 
-            productMap.put("productName", products.getProductName());
-            productMap.put("productPrice", products.getProductPrice());
-            productMap.put("productDescription", products.getProductDescription());
-            productMap.put("productCode", products.getProductCode());
-            productMap.put("productQuntity", products.getPrductQuantity());
+            productMap.put("name", products.getProductName());
+            productMap.put("price", products.getProductPrice());
+            productMap.put("description", products.getProductDescription());
+            productMap.put("code", products.getProductCode());
+            productMap.put("quntity", products.getPrductQuantity());
 
-            db.collection("Product").document(products.getProductDocumnetID()).update(productMap);
+            db.collection("product").document(products.getProductDocumnetID()).update(productMap);
         }
 
         successMessage();
@@ -173,38 +145,13 @@ public class product extends AppCompatActivity {
     //success message
     private void successMessage(){
         Snackbar.make(relativeProduct,"Updated Successfully!",Snackbar.LENGTH_LONG).show();
+        Intent intent = new Intent(this,ProductActivity.class);
+        //startActivity(intent);
+        //finish();
         //Toast.makeText(this,"Updated Successfully",Toast.LENGTH_LONG).show();
     }
 
-  /* private void setProducts(){
-       productName.setText(products.getProductName());
-       productPrice.setText(products.getProductPrice());
-       productDescription.setText(products.getProductDescription());
-       productCode.setText(products.getProductCode());
-       productQuntity.setText(productQuntity.getText().toString());
-    }
 
-    private void setDisableFields(){
-        productName.setEnabled(false);
-        productPrice.setEnabled(false);
-        productDescription.setEnabled(false);
-        productCode.setEnabled(false);
-        productQuntity.setEnabled(false);
-        btnUpdateProductProfile.setEnabled(false);
-
-    }
-
-    //to enable fields
-    private void setEnabledFields(){
-        productName.setEnabled(true);
-        productName.requestFocus();
-        productPrice.setEnabled(true);
-        productDescription.setEnabled(true);
-        productCode.setEnabled(true);
-        productQuntity.setEnabled(true);
-        btnUpdateProductProfile.setEnabled(true);
-
-    }*/
 
 
 

@@ -69,8 +69,6 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
         String productPrice = productList.get(i).getProductPrice();
         String productCode = productList.get(i).getProductCode();
 
-
-
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("/products/"+productCode.trim());
 
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -93,7 +91,6 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, product.class);
-
 
                 System.out.println("============================ " + productList.get(i).getProductPrice());
 
@@ -127,7 +124,7 @@ public class ProductRecycleViewAdapter extends RecyclerView.Adapter<ProductViewH
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Alert");
-        builder.setMessage("Do You want to delete this product?")
+        builder.setMessage("Do You Want To Delete This Product?")
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.dismiss();
