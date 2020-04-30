@@ -96,10 +96,8 @@ public class EditCustomerUI extends AppCompatActivity {
 
             db.collection("Customer").document(customer.getCustomerDocumentID()).update(customerMap);
         }
-
         successUpdateCustomerMsg();
     }
-
     //to set data to customer update
    private void setCustomerUpdateProfile(){
        txt_upCus_ShopName.setText(customer.getShopNameCustomer());

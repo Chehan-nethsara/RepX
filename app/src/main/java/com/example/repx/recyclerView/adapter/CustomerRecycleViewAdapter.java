@@ -8,8 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import android.app.AlertDialog;
+import android.widget.Button;
+
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.repx.AddShop;
 import com.example.repx.Customer_Details;
 import com.example.repx.EditCustomerUI;
 import com.example.repx.R;
@@ -64,6 +68,14 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
 
             }
         });
+
+//        customerViewHolder.btn_Add_New_Customer_New.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, AddShop.class);
+//                context.startActivity(intent);
+//            }
+//        });
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
