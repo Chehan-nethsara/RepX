@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,7 +27,6 @@ public class AddNewDealerActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private final static String TAG = "AddNewDealerActivity";
     private EditText dealerCode,dealerName,dealerArea,dealerCategory,dealerPhoneNumber;
-    private Button addNewDealerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,6 @@ public class AddNewDealerActivity extends AppCompatActivity {
         dealerArea = findViewById(R.id.txt_dealerArea);
         dealerCategory = findViewById(R.id.txt_dealerCategory);
         dealerPhoneNumber = findViewById(R.id.txt_dealerPhoneNumber);
-        addNewDealerButton = findViewById(R.id.btn_addNewDealer);
 
         toolbar.setTitle("Add New Dealer");
         // Setting toolbar as the ActionBar with setSupportActionBar() call
@@ -49,12 +48,7 @@ public class AddNewDealerActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        addNewDealerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addNewDealer();
-            }
-        });
+
 
     }
 
