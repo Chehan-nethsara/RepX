@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +36,7 @@ public class DealerActivity extends AppCompatActivity {
     private  RecyclerView recyclerView;
 
     private  List<Dealer> dealerList;
+    private ImageButton btnAddNewDealer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,7 @@ public class DealerActivity extends AppCompatActivity {
         // Setting toolbar as the ActionBar with setSupportActionBar() call
         setSupportActionBar(toolbar);
 
+        this.btnAddNewDealer = findViewById(R.id.btn_addNewDealer_one);
 
         recyclerView = findViewById(R.id.recyclerView);
 
@@ -56,6 +60,15 @@ public class DealerActivity extends AppCompatActivity {
         dealerList = new ArrayList<>();
 
         getdealersData();
+
+        this.btnAddNewDealer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DealerActivity.this
+                        ,AddNewDealerActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
