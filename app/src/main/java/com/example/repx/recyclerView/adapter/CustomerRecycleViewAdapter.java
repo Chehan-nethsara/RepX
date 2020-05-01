@@ -69,14 +69,6 @@ public class CustomerRecycleViewAdapter extends RecyclerView.Adapter<CustomerVie
             }
         });
 
-//        customerViewHolder.btn_Add_New_Customer_New.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, AddShop.class);
-//                context.startActivity(intent);
-//            }
-//        });
-
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

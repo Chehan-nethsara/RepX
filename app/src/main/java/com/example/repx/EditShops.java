@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.repx.dto.Customer;
@@ -28,12 +29,12 @@ import java.util.Map;
 
 public class EditShops extends AppCompatActivity implements CustomerRecycleViewAdapter.CustomerListner {
 
-    //CustomerRecycleViewAdapter.CustomerListner customerListner;
     private static final String TAG = "EditShops";
     private Toolbar toolbar;
     private FirebaseFirestore db;
     private RecyclerView recyclerViewCustomer;
     private List<Customer> customerList;
+    private ImageButton btn_Add_New_Customer_New;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class EditShops extends AppCompatActivity implements CustomerRecycleViewA
         setSupportActionBar(toolbar);
 
         recyclerViewCustomer = findViewById(R.id.recyclerView_Customer);
-//        btn_Add_New_Customer_New = findViewById(R.id.btn_add_New_cudtomer_ui);
+        btn_Add_New_Customer_New = findViewById(R.id.btn_add_New_cudtomer_ui);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -54,6 +55,14 @@ public class EditShops extends AppCompatActivity implements CustomerRecycleViewA
         db = FirebaseFirestore.getInstance();
         customerList = new ArrayList<>();
         getCustomersList();
+
+        btn_Add_New_Customer_New.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EditShops.this, AddShop.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -80,7 +89,7 @@ public class EditShops extends AppCompatActivity implements CustomerRecycleViewA
                                         customer.setEmailCustomer(customerHashMap.get("EmailAddress").toString());
                                         customer.setAddressCustomer(customerHashMap.get("PostalAddress").toString());
                                     customer.setCustomerDocumentID(document.getId());
-                                    //customerListner.removeCustomer(i);
+
                                customerList.add(customer);
                             }
                             loadRecyclerViewCustomer();
