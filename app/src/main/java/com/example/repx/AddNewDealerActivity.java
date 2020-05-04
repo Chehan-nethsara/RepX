@@ -27,6 +27,7 @@ public class AddNewDealerActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private final static String TAG = "AddNewDealerActivity";
     private EditText dealerCode,dealerName,dealerArea,dealerCategory,dealerPhoneNumber;
+    private Button addNewDealerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,16 @@ public class AddNewDealerActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        addNewDealerButton = findViewById(R.id.btn_addNewDealer);
+
+
+
+        addNewDealerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNewDealer();
+            }
+        });
 
 
     }
